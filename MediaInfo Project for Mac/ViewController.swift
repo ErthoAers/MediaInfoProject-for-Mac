@@ -9,19 +9,36 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    @IBOutlet weak var mediainfoTableView: NSTableView!
+    @IBOutlet var mediainfoTextView: NSTextView!
+    @IBOutlet weak var mediainfoScrollView: NSScrollView!
+    @IBOutlet weak var loadTextFieldCell: NSTextFieldCell!
+    
+    @IBAction func clearTableView(_ sender: Any) {
+    }
+    
+    var mediainfoList: [MediaInfo] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        mediainfoTableView.delegate = self
+        mediainfoTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            guard let url = representedObject as? URL else { return }
+            let fileList = FileLoader.Load(file: url)
+            for file in fileList {
+                DispatchQueue.global().async {
+                    self.mediainfoList.append(MediaInfo(file: file))
+                }
+            }
         }
     }
-
-
+    
 }
 

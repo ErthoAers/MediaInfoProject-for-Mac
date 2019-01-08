@@ -10,11 +10,14 @@
 		E96833FB21E32302002FD5DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96833FA21E32302002FD5DB /* AppDelegate.swift */; };
 		E96833FD21E32302002FD5DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96833FC21E32302002FD5DB /* ViewController.swift */; };
 		E96833FF21E32304002FD5DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96833FE21E32304002FD5DB /* Assets.xcassets */; };
-		E968340221E32304002FD5DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E968340021E32304002FD5DB /* Main.storyboard */; };
 		E968340B21E3234C002FD5DB /* MediaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968340A21E3234C002FD5DB /* MediaInfo.swift */; };
 		E968340E21E3236E002FD5DB /* MediaInfoWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = E968340D21E3236E002FD5DB /* MediaInfoWrapper.mm */; };
 		E968341221E326A5002FD5DB /* libmediainfo.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E968341021E326A5002FD5DB /* libmediainfo.0.dylib */; };
 		E968341321E326A5002FD5DB /* libzen.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E968341121E326A5002FD5DB /* libzen.0.dylib */; };
+		E968341721E3A245002FD5DB /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968341621E3A245002FD5DB /* WindowController.swift */; };
+		E968341921E3A257002FD5DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E968341821E3A257002FD5DB /* Main.storyboard */; };
+		E968341B21E3A3EB002FD5DB /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968341A21E3A3EB002FD5DB /* FileLoader.swift */; };
+		E968341D21E47ADA002FD5DB /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968341C21E47ADA002FD5DB /* ViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +25,6 @@
 		E96833FA21E32302002FD5DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E96833FC21E32302002FD5DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E96833FE21E32304002FD5DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E968340121E32304002FD5DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E968340321E32304002FD5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E968340421E32304002FD5DB /* MediaInfo_Project_for_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MediaInfo_Project_for_Mac.entitlements; sourceTree = "<group>"; };
 		E968340A21E3234C002FD5DB /* MediaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfo.swift; sourceTree = "<group>"; };
@@ -31,6 +33,10 @@
 		E968340F21E32388002FD5DB /* MediaInfoWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaInfoWrapper.h; sourceTree = "<group>"; };
 		E968341021E326A5002FD5DB /* libmediainfo.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmediainfo.0.dylib; sourceTree = "<group>"; };
 		E968341121E326A5002FD5DB /* libzen.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libzen.0.dylib; sourceTree = "<group>"; };
+		E968341621E3A245002FD5DB /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		E968341821E3A257002FD5DB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E968341A21E3A3EB002FD5DB /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
+		E968341C21E47ADA002FD5DB /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,14 +73,17 @@
 			children = (
 				E96833FA21E32302002FD5DB /* AppDelegate.swift */,
 				E96833FC21E32302002FD5DB /* ViewController.swift */,
-				E96833FE21E32304002FD5DB /* Assets.xcassets */,
-				E968340021E32304002FD5DB /* Main.storyboard */,
-				E968340321E32304002FD5DB /* Info.plist */,
-				E968340421E32304002FD5DB /* MediaInfo_Project_for_Mac.entitlements */,
+				E968341C21E47ADA002FD5DB /* ViewController+Extension.swift */,
+				E968341621E3A245002FD5DB /* WindowController.swift */,
+				E968341A21E3A3EB002FD5DB /* FileLoader.swift */,
 				E968340A21E3234C002FD5DB /* MediaInfo.swift */,
 				E968340D21E3236E002FD5DB /* MediaInfoWrapper.mm */,
 				E968340F21E32388002FD5DB /* MediaInfoWrapper.h */,
 				E968340C21E3236E002FD5DB /* MediaInfo Project for Mac-Bridging-Header.h */,
+				E96833FE21E32304002FD5DB /* Assets.xcassets */,
+				E968340321E32304002FD5DB /* Info.plist */,
+				E968341821E3A257002FD5DB /* Main.storyboard */,
+				E968340421E32304002FD5DB /* MediaInfo_Project_for_Mac.entitlements */,
 				E968341021E326A5002FD5DB /* libmediainfo.0.dylib */,
 				E968341121E326A5002FD5DB /* libzen.0.dylib */,
 			);
@@ -141,7 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E96833FF21E32304002FD5DB /* Assets.xcassets in Resources */,
-				E968340221E32304002FD5DB /* Main.storyboard in Resources */,
+				E968341921E3A257002FD5DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +161,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E968341B21E3A3EB002FD5DB /* FileLoader.swift in Sources */,
 				E96833FD21E32302002FD5DB /* ViewController.swift in Sources */,
+				E968341721E3A245002FD5DB /* WindowController.swift in Sources */,
+				E968341D21E47ADA002FD5DB /* ViewController+Extension.swift in Sources */,
 				E96833FB21E32302002FD5DB /* AppDelegate.swift in Sources */,
 				E968340E21E3236E002FD5DB /* MediaInfoWrapper.mm in Sources */,
 				E968340B21E3234C002FD5DB /* MediaInfo.swift in Sources */,
@@ -160,17 +172,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		E968340021E32304002FD5DB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E968340121E32304002FD5DB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E968340521E32304002FD5DB /* Debug */ = {
