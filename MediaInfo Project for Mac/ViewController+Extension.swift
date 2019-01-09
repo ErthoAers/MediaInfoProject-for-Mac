@@ -13,6 +13,15 @@ extension ViewController: NSTableViewDelegate {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return mediainfoList.count
     }
+    
+    func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
+        guard let sortDescriptor = tableView.sortDescriptors.first else { return }
+        if let order = MediaInfo.order(rawValue: sortDescriptor.key!) {
+            sortOrder = order
+            sortAscending = sortDescriptor.ascending
+            reloadFileList()
+        }
+    }
 
 }
 
@@ -176,7 +185,7 @@ extension ViewController: NSTableViewDataSource {
 
 extension ViewController {
     func reloadFileList() {
-        mediainfoList.sort(by: MediaInfo.orderBy(sortOrder, ascending: ascending))
+        mediainfoList.sort(by: MediaInfo.orderBy(sortOrder, ascending: sortAscending))
         mediainfoTableView.reloadData()
     }
     
@@ -187,5 +196,48 @@ extension ViewController {
             column.width = self.tableView(mediainfoTableView, sizeToFitWidthOfColumn: columnNum)
         }
     }
-
+    
+    @objc func click(_ sender: AnyObject) {
+        if mediainfoTableView.selectedRow == -1 { return }
+        mediainfoTextView.string = mediainfoList[mediainfoTableView.selectedRow].Summary
+    }
+    
+    func setOrderDescriptor() {
+        let descriptorFilename = NSSortDescriptor(key: MediaInfo.order.filename.rawValue, ascending: true)
+        let descriptorFormat = NSSortDescriptor(key: MediaInfo.order.format.rawValue, ascending: true)
+        let descriptorVideoFormat = NSSortDescriptor(key: MediaInfo.order.videoFormat.rawValue, ascending: true)
+        let descriptorResolutionRatio = NSSortDescriptor(key: MediaInfo.order.resolutionRatio.rawValue, ascending: true)
+        let descriptorBitDepth = NSSortDescriptor(key: MediaInfo.order.bitDepth.rawValue, ascending: true)
+        let descriptorFps = NSSortDescriptor(key: MediaInfo.order.fps.rawValue, ascending: true)
+        
+        let descriptorFormatAudio1 = NSSortDescriptor(key: MediaInfo.order.formatAudio1.rawValue, ascending: true)
+        let descriptorBitDepthAudio1 = NSSortDescriptor(key: MediaInfo.order.bitDepthAudio1.rawValue, ascending: true)
+        let descriptorBitRateAudio1 = NSSortDescriptor(key: MediaInfo.order.bitRateAudio1.rawValue, ascending: true)
+        let descriptorLanguageAudio1 = NSSortDescriptor(key: MediaInfo.order.languageAudio1.rawValue, ascending: true)
+        
+        let descriptorFormatAudio2 = NSSortDescriptor(key: MediaInfo.order.formatAudio2.rawValue, ascending: true)
+        let descriptorBitDepthAudio2 = NSSortDescriptor(key: MediaInfo.order.bitDepthAudio2.rawValue, ascending: true)
+        let descriptorBitRateAudio2 = NSSortDescriptor(key: MediaInfo.order.bitRateAudio2.rawValue, ascending: true)
+        let descriptorLanguageAudio2 = NSSortDescriptor(key: MediaInfo.order.languageAudio2.rawValue, ascending: true)
+        
+        let descriptorChapter = NSSortDescriptor(key: MediaInfo.order.chapter.rawValue, ascending: true)
+        let descriptorFullPath = NSSortDescriptor(key: MediaInfo.order.fullPath.rawValue, ascending: true)
+        
+        mediainfoTableView.tableColumns[0].sortDescriptorPrototype = descriptorFilename
+        mediainfoTableView.tableColumns[1].sortDescriptorPrototype = descriptorFormat
+        mediainfoTableView.tableColumns[2].sortDescriptorPrototype = descriptorVideoFormat
+        mediainfoTableView.tableColumns[3].sortDescriptorPrototype = descriptorResolutionRatio
+        mediainfoTableView.tableColumns[4].sortDescriptorPrototype = descriptorBitDepth
+        mediainfoTableView.tableColumns[5].sortDescriptorPrototype = descriptorFps
+        mediainfoTableView.tableColumns[6].sortDescriptorPrototype = descriptorFormatAudio1
+        mediainfoTableView.tableColumns[7].sortDescriptorPrototype = descriptorBitDepthAudio1
+        mediainfoTableView.tableColumns[8].sortDescriptorPrototype = descriptorBitRateAudio1
+        mediainfoTableView.tableColumns[9].sortDescriptorPrototype = descriptorLanguageAudio1
+        mediainfoTableView.tableColumns[10].sortDescriptorPrototype = descriptorFormatAudio2
+        mediainfoTableView.tableColumns[11].sortDescriptorPrototype = descriptorBitDepthAudio2
+        mediainfoTableView.tableColumns[12].sortDescriptorPrototype = descriptorBitRateAudio2
+        mediainfoTableView.tableColumns[13].sortDescriptorPrototype = descriptorLanguageAudio2
+        mediainfoTableView.tableColumns[14].sortDescriptorPrototype = descriptorChapter
+        mediainfoTableView.tableColumns[15].sortDescriptorPrototype = descriptorFullPath
+    }
 }
