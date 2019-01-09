@@ -18,14 +18,14 @@ class ViewController: NSViewController {
     }
     
     var mediainfoList: [MediaInfo] = []
-    
+    var ascending: Bool = true
+    var sortOrder: MediaInfo.order = .filename
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mediainfoTableView.delegate = self
         mediainfoTableView.dataSource = self
-        // Do any additional setup after loading the view.
     }
 
     override var representedObject: Any? {
@@ -33,10 +33,12 @@ class ViewController: NSViewController {
             guard let url = representedObject as? URL else { return }
             let fileList = FileLoader.Load(file: url)
             for file in fileList {
-                DispatchQueue.global().async {
+                //DispatchQueue.global().async {
                     self.mediainfoList.append(MediaInfo(file: file))
-                }
+                //}
             }
+            reloadFileList()
+            setColumnWidth()
         }
     }
     

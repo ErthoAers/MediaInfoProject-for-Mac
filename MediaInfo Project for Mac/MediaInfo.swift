@@ -66,7 +66,7 @@ final public class MediaInfo {
                 case 0:
                     return 0
                 case 1:
-                    return Int(MediaInfo.MI.get(General, 0, "Chapters_Pos_End"))! - Int(MediaInfo.MI.get(General, 0, "Chapters_Pos_Begin"))!
+                    return (Int(MediaInfo.MI.get(Menu, 0, "Chapters_Pos_End")) ?? 0) - (Int(MediaInfo.MI.get(Menu, 0, "Chapters_Pos_Begin")) ?? 0)
                 default:
                     return -1
                 }
@@ -76,34 +76,33 @@ final public class MediaInfo {
             filename:   fileURL.lastPathComponent.removingPercentEncoding!,
             fullPath:   fileURL.path.removingPercentEncoding!,
             format:     MediaInfo.MI.get(General, 0, "Format"),
-            bitRate:    Int(MediaInfo.MI.get(General, 0, "OverallBitRate")) ?? 0,
+            bitRate:    (Int(MediaInfo.MI.get(General, 0, "OverallBitRate")) ?? 0) / 1000,
             videoCount: Int(MediaInfo.MI.get(General, 0, "VideoCount")) ?? 0,
             audioCount: Int(MediaInfo.MI.get(General, 0, "AudioCount")) ?? 0,
             textCount:  Int(MediaInfo.MI.get(General, 0, "TextCount")) ?? 0,
             chapterCount: chapterCountVar)
-        
         for i in 0..<GeneralInfos.videoCount {
             VideoInfos.append(
                 VideoInfo(
                     format:         MediaInfo.MI.get(Video, i, "Format"),
                     formatProfile:  MediaInfo.MI.get(Video, i, "Format_Profile"),
                     fps:            MediaInfo.MI.get(Video, i, "FrameRate/String")!.replacingOccurrences(of: " FPS", with: ""),
-                    bitRate:        Int(MediaInfo.MI.get(Video, i, "BitRate")) ?? 0,
+                    bitRate:        (Int(MediaInfo.MI.get(Video, i, "BitRate")) ?? 0) / 1000,
                     bitDepth:       Int(MediaInfo.MI.get(Video, i, "BitDepth")) ?? 0,
                     duration:       Int(MediaInfo.MI.get(Video, i, "Duration")) ?? 0,
                     height:         Int(MediaInfo.MI.get(Video, i, "Height")) ?? 0,
                     width:          Int(MediaInfo.MI.get(Video, i, "Width")) ?? 0,
-                    language:       MediaInfo.MI.get(Video, i, "Language/String3")))
+                    language:       MediaInfo.MI.get(Video, i, "Language/String3").uppercased()))
         }
         
         for i in 0..<GeneralInfos.audioCount {
             AudioInfos.append(
                 AudioInfo(
                     format:     MediaInfo.MI.get(Audio, i, "Format"),
-                    bitRate:    Int(MediaInfo.MI.get(Audio, i, "BitRate")) ?? 0,
+                    bitRate:    (Int(MediaInfo.MI.get(Audio, i, "BitRate")) ?? 0) / 1000,
                     bitDepth:   Int(MediaInfo.MI.get(Audio, i, "BitDepth")) ?? 0,
                     duration:   Int(MediaInfo.MI.get(Audio, i, "Duration")) ?? 0,
-                    language:   MediaInfo.MI.get(Audio, i, "Language/String3")))
+                    language:   MediaInfo.MI.get(Audio, i, "Language/String3").uppercased()))
         }
         
         let chapterBlock = { (i: Int) -> [Substring] in

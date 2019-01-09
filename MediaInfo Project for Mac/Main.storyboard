@@ -471,7 +471,7 @@
                                                                     </textFieldCell>
                                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                     <prototypeCellViews>
-                                                                        <tableCellView identifier="containerID" id="fVP-ZE-zGr">
+                                                                        <tableCellView identifier="formatID" id="fVP-ZE-zGr">
                                                                             <rect key="frame" x="45" y="1" width="41" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
@@ -504,7 +504,7 @@
                                                                     </textFieldCell>
                                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                     <prototypeCellViews>
-                                                                        <tableCellView identifier="videoEncoderID" id="Zr9-E2-DgK">
+                                                                        <tableCellView identifier="videoFormatID" id="Zr9-E2-DgK">
                                                                             <rect key="frame" x="89" y="1" width="41" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
@@ -603,7 +603,7 @@
                                                                     </textFieldCell>
                                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                     <prototypeCellViews>
-                                                                        <tableCellView identifier="frameRateID" id="SLP-LZ-mKs">
+                                                                        <tableCellView identifier="fpsID" id="SLP-LZ-mKs">
                                                                             <rect key="frame" x="221" y="1" width="41" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
@@ -900,7 +900,7 @@
                                                                     </textFieldCell>
                                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                     <prototypeCellViews>
-                                                                        <tableCellView identifier="menuID" id="68j-cV-yAa">
+                                                                        <tableCellView identifier="chapterID" id="68j-cV-yAa">
                                                                             <rect key="frame" x="618" y="1" width="40" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
@@ -933,7 +933,7 @@
                                                                     </textFieldCell>
                                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                     <prototypeCellViews>
-                                                                        <tableCellView identifier="pathID" id="W6T-oT-2fw">
+                                                                        <tableCellView identifier="fullPathID" id="W6T-oT-2fw">
                                                                             <rect key="frame" x="661" y="1" width="37" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
