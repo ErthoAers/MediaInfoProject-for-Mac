@@ -79,7 +79,7 @@ extension ViewController: NSTableViewDataSource {
             case tableView.tableColumns[4]:
                 text = "\(media.VideoInfos[0].bitDepth)";   cellIdentifier = CellIdentifiers.bitDepth
             case tableView.tableColumns[5]:
-                text = "\(media.VideoInfos[0].bitRate)";    cellIdentifier = CellIdentifiers.fps
+                text = "\(media.VideoInfos[0].fps)";    cellIdentifier = CellIdentifiers.fps
             default:
                 break
             }
