@@ -10,6 +10,7 @@
 		E90EEDEE21E627E200708444 /* ColorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EEDED21E627E200708444 /* ColorConverter.swift */; };
 		E90EEDF121E6E80400708444 /* libmediainfo.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E968341021E326A5002FD5DB /* libmediainfo.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E90EEDF221E6E80400708444 /* libzen.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E968341121E326A5002FD5DB /* libzen.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		E90EEE4621E7996800708444 /* MediaInfo_Project_for_MacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EEE4521E7996800708444 /* MediaInfo_Project_for_MacTests.swift */; };
 		E96833FB21E32302002FD5DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96833FA21E32302002FD5DB /* AppDelegate.swift */; };
 		E96833FD21E32302002FD5DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96833FC21E32302002FD5DB /* ViewController.swift */; };
 		E96833FF21E32304002FD5DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96833FE21E32304002FD5DB /* Assets.xcassets */; };
@@ -22,6 +23,16 @@
 		E968341B21E3A3EB002FD5DB /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968341A21E3A3EB002FD5DB /* FileLoader.swift */; };
 		E968341D21E47ADA002FD5DB /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968341C21E47ADA002FD5DB /* ViewController+Extension.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E90EEE4821E7996800708444 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E96833EF21E32302002FD5DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E96833F621E32302002FD5DB;
+			remoteInfo = "MediaInfo Project for Mac";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E90EEDF321E6E80400708444 /* Embed Libraries */ = {
@@ -40,6 +51,9 @@
 
 /* Begin PBXFileReference section */
 		E90EEDED21E627E200708444 /* ColorConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConverter.swift; sourceTree = "<group>"; };
+		E90EEE4321E7996800708444 /* MediaInfo Project for MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MediaInfo Project for MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E90EEE4521E7996800708444 /* MediaInfo_Project_for_MacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfo_Project_for_MacTests.swift; sourceTree = "<group>"; };
+		E90EEE4721E7996800708444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E96833F721E32302002FD5DB /* MediaInfo Project for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MediaInfo Project for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96833FA21E32302002FD5DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E96833FC21E32302002FD5DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +73,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E90EEE4021E7996800708444 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E96833F421E32302002FD5DB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,10 +92,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E90EEE4421E7996800708444 /* MediaInfo Project for MacTests */ = {
+			isa = PBXGroup;
+			children = (
+				E90EEE4521E7996800708444 /* MediaInfo_Project_for_MacTests.swift */,
+				E90EEE4721E7996800708444 /* Info.plist */,
+			);
+			path = "MediaInfo Project for MacTests";
+			sourceTree = "<group>";
+		};
 		E96833EE21E32302002FD5DB = {
 			isa = PBXGroup;
 			children = (
 				E96833F921E32302002FD5DB /* MediaInfo Project for Mac */,
+				E90EEE4421E7996800708444 /* MediaInfo Project for MacTests */,
 				E96833F821E32302002FD5DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				E96833F721E32302002FD5DB /* MediaInfo Project for Mac.app */,
+				E90EEE4321E7996800708444 /* MediaInfo Project for MacTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,6 +145,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E90EEE4221E7996800708444 /* MediaInfo Project for MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E90EEE4C21E7996800708444 /* Build configuration list for PBXNativeTarget "MediaInfo Project for MacTests" */;
+			buildPhases = (
+				E90EEE3F21E7996800708444 /* Sources */,
+				E90EEE4021E7996800708444 /* Frameworks */,
+				E90EEE4121E7996800708444 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E90EEE4921E7996800708444 /* PBXTargetDependency */,
+			);
+			name = "MediaInfo Project for MacTests";
+			productName = "MediaInfo Project for MacTests";
+			productReference = E90EEE4321E7996800708444 /* MediaInfo Project for MacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E96833F621E32302002FD5DB /* MediaInfo Project for Mac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E968340721E32304002FD5DB /* Build configuration list for PBXNativeTarget "MediaInfo Project for Mac" */;
@@ -141,6 +191,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Icefires Chen";
 				TargetAttributes = {
+					E90EEE4221E7996800708444 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = E96833F621E32302002FD5DB;
+					};
 					E96833F621E32302002FD5DB = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
@@ -161,11 +215,19 @@
 			projectRoot = "";
 			targets = (
 				E96833F621E32302002FD5DB /* MediaInfo Project for Mac */,
+				E90EEE4221E7996800708444 /* MediaInfo Project for MacTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E90EEE4121E7996800708444 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E96833F521E32302002FD5DB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -178,6 +240,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E90EEE3F21E7996800708444 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E90EEE4621E7996800708444 /* MediaInfo_Project_for_MacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E96833F321E32302002FD5DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,7 +265,57 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E90EEE4921E7996800708444 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E96833F621E32302002FD5DB /* MediaInfo Project for Mac */;
+			targetProxy = E90EEE4821E7996800708444 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		E90EEE4A21E7996800708444 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AC2CZW9UF4;
+				INFOPLIST_FILE = "MediaInfo Project for MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "icefires.MediaInfo-Project-for-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediaInfo Project for Mac.app/Contents/MacOS/MediaInfo Project for Mac";
+			};
+			name = Debug;
+		};
+		E90EEE4B21E7996800708444 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AC2CZW9UF4;
+				INFOPLIST_FILE = "MediaInfo Project for MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "icefires.MediaInfo-Project-for-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediaInfo Project for Mac.app/Contents/MacOS/MediaInfo Project for Mac";
+			};
+			name = Release;
+		};
 		E968340521E32304002FD5DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -321,8 +441,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "MediaInfo Project for Mac/MediaInfo_Project_for_Mac.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AC2CZW9UF4;
 				INFOPLIST_FILE = "MediaInfo Project for Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -335,6 +457,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "icefires.MediaInfo-Project-for-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MediaInfo Project for Mac/MediaInfo Project for Mac-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -347,8 +470,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "MediaInfo Project for Mac/MediaInfo_Project_for_Mac.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AC2CZW9UF4;
 				INFOPLIST_FILE = "MediaInfo Project for Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -361,6 +486,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "icefires.MediaInfo-Project-for-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MediaInfo Project for Mac/MediaInfo Project for Mac-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 			};
@@ -369,6 +495,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E90EEE4C21E7996800708444 /* Build configuration list for PBXNativeTarget "MediaInfo Project for MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E90EEE4A21E7996800708444 /* Debug */,
+				E90EEE4B21E7996800708444 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E96833F221E32302002FD5DB /* Build configuration list for PBXProject "MediaInfo Project for Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

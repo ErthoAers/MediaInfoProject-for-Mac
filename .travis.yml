@@ -1,3 +1,4 @@
 language: swift
-os: osx
-xcode_project: MediaInfo_Project_for_Mac.xcodeproj
+osx_image: xcode10.1
+xcode_project: MediaInfo Project for Mac.xcodeproj
+xcode_scheme: MediaInfo Project for MacTests
