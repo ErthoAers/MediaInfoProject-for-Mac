@@ -20,6 +20,7 @@ final public class MediaInfo {
         let audioCount: Int
         let textCount: Int
         let chapterCount: Int
+        let delay: Bool
     }
     
     public struct VideoInfo {
@@ -32,6 +33,7 @@ final public class MediaInfo {
         let height: Int
         let width: Int
         let language: String
+        let delay: Bool
     }
     
     public struct AudioInfo {
@@ -40,14 +42,16 @@ final public class MediaInfo {
         let bitDepth: Int
         let duration: Int
         let language: String
+        let delay: Bool
     }
     
     public struct ChapterInfo {
-        let timespan: String
+        let timespan: Int
         let language: String
         let name: String
     }
     
+    public let fileURL: URL
     public let Summary: String
     public var GeneralInfos: GeneralInfo
     public var VideoInfos: [VideoInfo] = []
@@ -55,6 +59,7 @@ final public class MediaInfo {
     public var ChapterInfos: [ChapterInfo] = []
     
     init(file fileURL: URL) {
+        self.fileURL = fileURL
         MediaInfo.MI.open(fileURL.path.removingPercentEncoding!)
         
         MediaInfo.MI.option("Complete")
@@ -80,7 +85,8 @@ final public class MediaInfo {
             videoCount: Int(MediaInfo.MI.get(General, 0, "VideoCount")) ?? 0,
             audioCount: Int(MediaInfo.MI.get(General, 0, "AudioCount")) ?? 0,
             textCount:  Int(MediaInfo.MI.get(General, 0, "TextCount")) ?? 0,
-            chapterCount: chapterCountVar)
+            chapterCount: chapterCountVar,
+            delay:      (MediaInfo.MI.get(Video, 0, "Delay") == "" || MediaInfo.MI.get(Video, 0, "Delay") == "0") ? false : true)
         for i in 0..<GeneralInfos.videoCount {
             VideoInfos.append(
                 VideoInfo(
@@ -89,10 +95,11 @@ final public class MediaInfo {
                     fps:            MediaInfo.MI.get(Video, i, "FrameRate/String")!.replacingOccurrences(of: " FPS", with: ""),
                     bitRate:        (Int(MediaInfo.MI.get(Video, i, "BitRate")) ?? 0) / 1000,
                     bitDepth:       Int(MediaInfo.MI.get(Video, i, "BitDepth")) ?? 0,
-                    duration:       Int(MediaInfo.MI.get(Video, i, "Duration")) ?? 0,
+                    duration:       Int(Double(MediaInfo.MI.get(Video, i, "Duration")) ?? 0),
                     height:         Int(MediaInfo.MI.get(Video, i, "Height")) ?? 0,
                     width:          Int(MediaInfo.MI.get(Video, i, "Width")) ?? 0,
-                    language:       MediaInfo.MI.get(Video, i, "Language/String3").uppercased()))
+                    language:       MediaInfo.MI.get(Video, i, "Language/String3").uppercased(),
+                    delay:          (MediaInfo.MI.get(Video, 0, "Delay") == "" || MediaInfo.MI.get(Video, 0, "Delay") == "0") ? false : true))
         }
         
         for i in 0..<GeneralInfos.audioCount {
@@ -101,21 +108,26 @@ final public class MediaInfo {
                     format:     MediaInfo.MI.get(Audio, i, "Format"),
                     bitRate:    (Int(MediaInfo.MI.get(Audio, i, "BitRate")) ?? 0) / 1000,
                     bitDepth:   Int(MediaInfo.MI.get(Audio, i, "BitDepth")) ?? 0,
-                    duration:   Int(MediaInfo.MI.get(Audio, i, "Duration")) ?? 0,
-                    language:   MediaInfo.MI.get(Audio, i, "Language/String3").uppercased()))
+                    duration:   Int(Double(MediaInfo.MI.get(Audio, i, "Duration")) ?? 0),
+                    language:   MediaInfo.MI.get(Audio, i, "Language/String3").uppercased(),
+                    delay:      (MediaInfo.MI.get(Video, 0, "Delay") == "" || MediaInfo.MI.get(Video, 0, "Delay") == "0") ? false : true))
         }
         
         let chapterBlock = { (i: Int) -> [Substring] in
             if self.GeneralInfos.format == "Matroska" { return ((MediaInfo.MI.get(Menu, 0, i, InfoText)!.split(separator: ":"))) }
             else { return ["", Substring(MediaInfo.MI.get(Menu, 0, i, InfoText))] }
         }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss.SSS"
+        let startTime = dateFormatter.date(from: "00:00:00.000")!
         if GeneralInfos.chapterCount > 0 {
             for i in Int(MediaInfo.MI.get(Menu, 0, "Chapters_Pos_Begin"))! ..< Int(MediaInfo.MI.get(Menu, 0, "Chapters_Pos_End"))! {
                 let chapterinfo = chapterBlock(i)
                 ChapterInfos.append(
-                ChapterInfo(timespan:   MediaInfo.MI.get(Menu, 0, i, InfoName),
-                            language:   String(chapterinfo[0]),
-                            name:       String(chapterinfo[1])))
+                    ChapterInfo(
+                        timespan:   Int((dateFormatter.date(from: MediaInfo.MI.get(Menu, 0, i, InfoName))!.timeIntervalSince(startTime)) * 1000),
+                        language:   String(chapterinfo[0]),
+                        name:       String(chapterinfo[1])))
             }
         }
         

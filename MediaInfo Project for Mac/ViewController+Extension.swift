@@ -155,6 +155,7 @@ extension ViewController: NSTableViewDataSource {
         }
 
         guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: nil) as? NSTableCellView else { return nil }
+        cell.textField?.textColor = ColorConverter.FontColorConverter(media: media)
         cell.textField?.stringValue = text
         return cell
     }
@@ -180,6 +181,10 @@ extension ViewController: NSTableViewDataSource {
             if fittingWidth > width { width = fittingWidth + 10 }
         }
         return min(maxWidth, width)
+    }
+    
+    func tableView(_ tableView: NSTableView, didAdd rowView: NSTableRowView, forRow row: Int) {
+        rowView.backgroundColor = ColorConverter.BackGroundColorConverter(media: mediainfoList[row])
     }
 }
 

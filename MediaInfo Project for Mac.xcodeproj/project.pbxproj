@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E90EEDEE21E627E200708444 /* ColorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EEDED21E627E200708444 /* ColorConverter.swift */; };
 		E96833FB21E32302002FD5DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96833FA21E32302002FD5DB /* AppDelegate.swift */; };
 		E96833FD21E32302002FD5DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96833FC21E32302002FD5DB /* ViewController.swift */; };
 		E96833FF21E32304002FD5DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96833FE21E32304002FD5DB /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E90EEDED21E627E200708444 /* ColorConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConverter.swift; sourceTree = "<group>"; };
 		E96833F721E32302002FD5DB /* MediaInfo Project for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MediaInfo Project for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96833FA21E32302002FD5DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E96833FC21E32302002FD5DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				E968341C21E47ADA002FD5DB /* ViewController+Extension.swift */,
 				E968341621E3A245002FD5DB /* WindowController.swift */,
 				E968341A21E3A3EB002FD5DB /* FileLoader.swift */,
+				E90EEDED21E627E200708444 /* ColorConverter.swift */,
 				E968340A21E3234C002FD5DB /* MediaInfo.swift */,
 				E968340D21E3236E002FD5DB /* MediaInfoWrapper.mm */,
 				E968340F21E32388002FD5DB /* MediaInfoWrapper.h */,
@@ -167,6 +170,7 @@
 				E968341D21E47ADA002FD5DB /* ViewController+Extension.swift in Sources */,
 				E96833FB21E32302002FD5DB /* AppDelegate.swift in Sources */,
 				E968340E21E3236E002FD5DB /* MediaInfoWrapper.mm in Sources */,
+				E90EEDEE21E627E200708444 /* ColorConverter.swift in Sources */,
 				E968340B21E3234C002FD5DB /* MediaInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
