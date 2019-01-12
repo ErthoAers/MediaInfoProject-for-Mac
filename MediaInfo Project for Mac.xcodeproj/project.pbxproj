@@ -71,6 +71,7 @@
 		E93E6F5D21E9D4CE00F3CDCB /* libmediainfo.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmediainfo.0.dylib; sourceTree = "<group>"; };
 		E93E6F5E21E9D4CE00F3CDCB /* libzen.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libzen.0.dylib; sourceTree = "<group>"; };
 		E93E6F6321E9D50B00F3CDCB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E93E6F6621E9D7AA00F3CDCB /* MediaInfoDLL_Static.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaInfoDLL_Static.h; sourceTree = "<group>"; };
 		E991BA4A21E9D1F6003A63E6 /* MediaInfo Project for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MediaInfo Project for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E991BA5121E9D1F7003A63E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E991BA5621E9D1F7003A63E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E93E6F6521E9D78000F3CDCB /* MediaInfoDLL */ = {
+			isa = PBXGroup;
+			children = (
+				E93E6F6621E9D7AA00F3CDCB /* MediaInfoDLL_Static.h */,
+			);
+			path = MediaInfoDLL;
+			sourceTree = "<group>";
+		};
 		E991BA4121E9D1F6003A63E6 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +142,7 @@
 		E991BA4C21E9D1F6003A63E6 /* MediaInfo Project for Mac */ = {
 			isa = PBXGroup;
 			children = (
+				E93E6F6521E9D78000F3CDCB /* MediaInfoDLL */,
 				E93E6F4A21E9D40E00F3CDCB /* AppDelegate.swift */,
 				E93E6F4721E9D40D00F3CDCB /* ViewController.swift */,
 				E93E6F4521E9D40D00F3CDCB /* ViewController+Extension.swift */,
