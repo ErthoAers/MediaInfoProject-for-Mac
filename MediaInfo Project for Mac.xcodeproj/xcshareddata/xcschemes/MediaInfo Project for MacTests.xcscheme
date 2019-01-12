@@ -5,22 +5,6 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E90EEE4221E7996800708444"
-               BuildableName = "MediaInfo Project for MacTests.xctest"
-               BlueprintName = "MediaInfo Project for MacTests"
-               ReferencedContainer = "container:MediaInfo Project for Mac.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -32,7 +16,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E90EEE4221E7996800708444"
+               BlueprintIdentifier = "E991BA5B21E9D1F7003A63E6"
                BuildableName = "MediaInfo Project for MacTests.xctest"
                BlueprintName = "MediaInfo Project for MacTests"
                ReferencedContainer = "container:MediaInfo Project for Mac.xcodeproj">
@@ -42,7 +26,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E96833F621E32302002FD5DB"
+            BlueprintIdentifier = "E991BA4921E9D1F6003A63E6"
             BuildableName = "MediaInfo Project for Mac.app"
             BlueprintName = "MediaInfo Project for Mac"
             ReferencedContainer = "container:MediaInfo Project for Mac.xcodeproj">
@@ -65,7 +49,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E96833F621E32302002FD5DB"
+            BlueprintIdentifier = "E991BA4921E9D1F6003A63E6"
             BuildableName = "MediaInfo Project for Mac.app"
             BlueprintName = "MediaInfo Project for Mac"
             ReferencedContainer = "container:MediaInfo Project for Mac.xcodeproj">
@@ -80,6 +64,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E991BA4921E9D1F6003A63E6"
+            BuildableName = "MediaInfo Project for Mac.app"
+            BlueprintName = "MediaInfo Project for Mac"
+            ReferencedContainer = "container:MediaInfo Project for Mac.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

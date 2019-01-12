@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E96833F621E32302002FD5DB"
+               BlueprintIdentifier = "E991BA4921E9D1F6003A63E6"
                BuildableName = "MediaInfo Project for Mac.app"
                BlueprintName = "MediaInfo Project for Mac"
                ReferencedContainer = "container:MediaInfo Project for Mac.xcodeproj">
@@ -22,15 +22,29 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E90EEE4221E7996800708444"
+               BlueprintIdentifier = "E991BA5B21E9D1F7003A63E6"
                BuildableName = "MediaInfo Project for MacTests.xctest"
                BlueprintName = "MediaInfo Project for MacTests"
+               ReferencedContainer = "container:MediaInfo Project for Mac.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E991BA6621E9D1F7003A63E6"
+               BuildableName = "MediaInfo Project for MacUITests.xctest"
+               BlueprintName = "MediaInfo Project for MacUITests"
                ReferencedContainer = "container:MediaInfo Project for Mac.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +60,19 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E90EEE4221E7996800708444"
+               BlueprintIdentifier = "E991BA5B21E9D1F7003A63E6"
                BuildableName = "MediaInfo Project for MacTests.xctest"
                BlueprintName = "MediaInfo Project for MacTests"
+               ReferencedContainer = "container:MediaInfo Project for Mac.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E991BA6621E9D1F7003A63E6"
+               BuildableName = "MediaInfo Project for MacUITests.xctest"
+               BlueprintName = "MediaInfo Project for MacUITests"
                ReferencedContainer = "container:MediaInfo Project for Mac.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,7 +80,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E96833F621E32302002FD5DB"
+            BlueprintIdentifier = "E991BA4921E9D1F6003A63E6"
             BuildableName = "MediaInfo Project for Mac.app"
             BlueprintName = "MediaInfo Project for Mac"
             ReferencedContainer = "container:MediaInfo Project for Mac.xcodeproj">
@@ -79,7 +103,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E96833F621E32302002FD5DB"
+            BlueprintIdentifier = "E991BA4921E9D1F6003A63E6"
             BuildableName = "MediaInfo Project for Mac.app"
             BlueprintName = "MediaInfo Project for Mac"
             ReferencedContainer = "container:MediaInfo Project for Mac.xcodeproj">
@@ -98,7 +122,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E96833F621E32302002FD5DB"
+            BlueprintIdentifier = "E991BA4921E9D1F6003A63E6"
             BuildableName = "MediaInfo Project for Mac.app"
             BlueprintName = "MediaInfo Project for Mac"
             ReferencedContainer = "container:MediaInfo Project for Mac.xcodeproj">

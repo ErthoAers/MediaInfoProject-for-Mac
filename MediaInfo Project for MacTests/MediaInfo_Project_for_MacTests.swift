@@ -2,11 +2,12 @@
 //  MediaInfo_Project_for_MacTests.swift
 //  MediaInfo Project for MacTests
 //
-//  Created by Icefires Chen on 2019/1/10.
+//  Created by Icefires Chen on 2019/1/12.
 //  Copyright © 2019 Icefires Chen. All rights reserved.
 //
 
 import XCTest
+@testable import MediaInfo_Project_for_Mac
 
 class MediaInfo_Project_for_MacTests: XCTestCase {
 
