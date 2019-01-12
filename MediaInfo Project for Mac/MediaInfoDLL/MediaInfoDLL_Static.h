@@ -187,20 +187,12 @@ MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfo_Inform (void* Handle, size_t
 MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfo_GetI (void* Handle, MediaInfo_stream_C StreamKind, size_t StreamNumber, size_t Parameter, MediaInfo_info_C InfoKind); /*Default : InfoKind=Info_Text*/
 /** @brief Wrapper for MediaInfoLib::MediaInfo::Get */
 MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfo_Get (void* Handle, MediaInfo_stream_C StreamKind, size_t StreamNumber, const wchar_t* Parameter, MediaInfo_info_C InfoKind, MediaInfo_info_C SearchKind); /*Default : InfoKind=Info_Text, SearchKind=Info_Name*/
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Set */
-MEDIAINFO_EXP size_t            __stdcall MediaInfo_SetI (void* Handle, const wchar_t* ToSet, MediaInfo_stream_C StreamKind, size_t StreamNumber, size_t Parameter, const wchar_t* OldParameter);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Set */
-MEDIAINFO_EXP size_t            __stdcall MediaInfo_Set (void* Handle, const wchar_t* ToSet, MediaInfo_stream_C StreamKind, size_t StreamNumber, const wchar_t* Parameter, const wchar_t* OldParameter);
 /** @brief Wrapper for MediaInfoLib::MediaInfo::Output_Buffer_Get */
 MEDIAINFO_EXP size_t            __stdcall MediaInfo_Output_Buffer_Get (void* Handle, const wchar_t* Value);
 /** @brief Wrapper for MediaInfoLib::MediaInfo::Output_Buffer_Get */
 MEDIAINFO_EXP size_t            __stdcall MediaInfo_Output_Buffer_GetI (void* Handle, size_t Pos);
 /** @brief Wrapper for MediaInfoLib::MediaInfo::Option */
 MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfo_Option (void* Handle, const wchar_t* Option, const wchar_t* Value);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::State_Get */
-MEDIAINFO_EXP size_t            __stdcall MediaInfo_State_Get (void* Handle);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Count_Get */
-MEDIAINFO_EXP size_t            __stdcall MediaInfo_Count_Get (void* Handle, MediaInfo_stream_C StreamKind, size_t StreamNumber); /*Default : StreamNumber=-1*/
 #else //defined(MEDIAINFO_DLL_EXPORT) || (defined(UNICODE) || defined(_UNICODE))
     #define MediaInfo_New               MediaInfoA_New
     #define MediaInfo_New_Quick         MediaInfoA_New_Quick
@@ -256,20 +248,12 @@ MEDIAINFO_EXP const char*       __stdcall MediaInfoA_Inform (void* Handle, size_
 MEDIAINFO_EXP const char*       __stdcall MediaInfoA_GetI (void* Handle, MediaInfo_stream_C StreamKind, size_t StreamNumber, size_t Parameter, MediaInfo_info_C InfoKind); /*Default : InfoKind=Info_Text*/
 /** @brief Wrapper for MediaInfoLib::MediaInfo::Get */
 MEDIAINFO_EXP const char*       __stdcall MediaInfoA_Get (void* Handle, MediaInfo_stream_C StreamKind, size_t StreamNumber, const char* Parameter, MediaInfo_info_C InfoKind, MediaInfo_info_C SearchKind); /*Default : InfoKind=Info_Text, SearchKind=Info_Name*/
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Set */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoA_SetI (void* Handle, const char* ToSet, MediaInfo_stream_C StreamKind, size_t StreamNumber, size_t Parameter, const char* OldParameter);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Set */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoA_Set (void* Handle, const char* ToSet, MediaInfo_stream_C StreamKind, size_t StreamNumber, const char* Parameter, const char* OldParameter);
 /** @brief Wrapper for MediaInfoLib::MediaInfo::Output_Buffer_Get */
 MEDIAINFO_EXP size_t            __stdcall MediaInfoA_Output_Buffer_Get (void* Handle, const char* Value);
 /** @brief Wrapper for MediaInfoLib::MediaInfo::Output_Buffer_Get */
 MEDIAINFO_EXP size_t            __stdcall MediaInfoA_Output_Buffer_GetI (void* Handle, size_t Pos);
 /** @brief Wrapper for MediaInfoLib::MediaInfo::Option */
 MEDIAINFO_EXP const char*       __stdcall MediaInfoA_Option (void* Handle, const char* Option, const char* Value);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::State_Get */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoA_State_Get (void* Handle);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Count_Get */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoA_Count_Get (void* Handle, MediaInfo_stream_C StreamKind, size_t StreamNumber); /*Default : StreamNumber=-1*/
 
 
 #if defined(MEDIAINFO_DLL_EXPORT) || (defined(UNICODE) || defined(_UNICODE)) //DLL construction or Unicode
@@ -293,18 +277,8 @@ MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfoList_Inform (void* Handle, si
 MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfoList_GetI (void* Handle, size_t FilePos, MediaInfo_stream_C StreamKind, size_t StreamNumber, size_t Parameter, MediaInfo_info_C InfoKind); /*Default : InfoKind=Info_Text*/
 /** @brief Wrapper for MediaInfoListLib::MediaInfoList::Get */
 MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfoList_Get (void* Handle, size_t FilePos, MediaInfo_stream_C StreamKind, size_t StreamNumber, const wchar_t* Parameter, MediaInfo_info_C InfoKind, MediaInfo_info_C SearchKind); /*Default : InfoKind=Info_Text, SearchKind=Info_Name*/
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Set */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoList_SetI (void* Handle, const wchar_t* ToSet, size_t FilePos, MediaInfo_stream_C StreamKind, size_t StreamNumber, size_t Parameter, const wchar_t* OldParameter);
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Set */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoList_Set (void* Handle, const wchar_t* ToSet, size_t FilePos, MediaInfo_stream_C StreamKind, size_t StreamNumber, const wchar_t* Parameter, const wchar_t* OldParameter);
 /** @brief Wrapper for MediaInfoListLib::MediaInfoList::Option */
 MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfoList_Option (void* Handle, const wchar_t* Option, const wchar_t* Value);
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::State_Get */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoList_State_Get (void* Handle);
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Count_Get */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoList_Count_Get (void* Handle, size_t FilePos, MediaInfo_stream_C StreamKind, size_t StreamNumber); /*Default : StreamNumber=-1*/
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Count_Get */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoList_Count_Get_Files (void* Handle);
 #else //defined(MEDIAINFO_DLL_EXPORT) || (defined(UNICODE) || defined(_UNICODE))
     #define MediaInfoList_New               MediaInfoListA_New
     #define MediaInfoList_New_Quick         MediaInfoListA_New_Quick
@@ -351,16 +325,8 @@ MEDIAINFO_EXP const char*       __stdcall MediaInfoListA_Inform (void* Handle, s
 MEDIAINFO_EXP const char*       __stdcall MediaInfoListA_GetI (void* Handle, size_t FilePos, MediaInfo_stream_C StreamKind, size_t StreamNumber, size_t Parameter, MediaInfo_info_C InfoKind); /*Default : InfoKind=Info_Text*/
 /** @brief Wrapper for MediaInfoListLib::MediaInfoList::Get */
 MEDIAINFO_EXP const char*       __stdcall MediaInfoListA_Get (void* Handle, size_t FilePos, MediaInfo_stream_C StreamKind, size_t StreamNumber, const char* Parameter, MediaInfo_info_C InfoKind, MediaInfo_info_C SearchKind); /*Default : InfoKind=Info_Text, SearchKind=Info_Name*/
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Set */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoListA_SetI (void* Handle, const char* ToSet, size_t FilePos, MediaInfo_stream_C StreamKind, size_t StreamNumber, size_t Parameter, const char* OldParameter);
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Set */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoListA_Set (void* Handles, const char* ToSet, size_t FilePos, MediaInfo_stream_C StreamKind, size_t StreamNumber, const char* Parameter, const char* OldParameter);
 /** @brief Wrapper for MediaInfoListLib::MediaInfoList::Option */
 MEDIAINFO_EXP const char*       __stdcall MediaInfoListA_Option (void* Handle, const char* Option, const char* Value);
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::State_Get */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoListA_State_Get (void* Handle);
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Count_Get */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoListA_Count_Get (void* Handle, size_t FilePos, MediaInfo_stream_C StreamKind, size_t StreamNumber); /*Default : StreamNumber=-1*/
 /** @brief Wrapper for MediaInfoListLib::MediaInfoList::Count_Get */
 MEDIAINFO_EXP size_t            __stdcall MediaInfoListA_Count_Get_Files (void* Handle);
 
@@ -459,20 +425,13 @@ public :
 
     //File
     size_t Open (const String &File) {return MediaInfo_Open(Handle, File.c_str());};
-    size_t Open (const unsigned char* Begin, size_t Begin_Size, const unsigned char* End=NULL, size_t End_Size=NULL) {return MediaInfo_Open_Buffer(Handle, Begin, Begin_Size, End, End_Size);};
-    size_t Save () {return MediaInfo_Save(Handle);};
     void Close () {return MediaInfo_Close(Handle);};
 
     //General information
     String Inform ()  {return MediaInfo_Inform(Handle, 0);};
     String Get (stream_t StreamKind, size_t StreamNumber, size_t Parameter, info_t InfoKind=Info_Text)  {return MediaInfo_GetI (Handle, (MediaInfo_stream_C)StreamKind, StreamNumber, Parameter, (MediaInfo_info_C)InfoKind);};
     String Get (stream_t StreamKind, size_t StreamNumber, const String &Parameter, info_t InfoKind=Info_Text, info_t SearchKind=Info_Name)  {return MediaInfo_Get (Handle, (MediaInfo_stream_C)StreamKind, StreamNumber, Parameter.c_str(), (MediaInfo_info_C)InfoKind, (MediaInfo_info_C)SearchKind);};
-    size_t Set (const String &ToSet, stream_t StreamKind, size_t StreamNumber, size_t Parameter, const String &OldValue=__T(""))  {return MediaInfo_SetI (Handle, ToSet.c_str(), (MediaInfo_stream_C)StreamKind, StreamNumber, Parameter, OldValue.c_str());};
-    size_t Set (const String &ToSet, stream_t StreamKind, size_t StreamNumber, const String &Parameter, const String &OldValue=__T(""))  {return MediaInfo_Set (Handle, ToSet.c_str(), (MediaInfo_stream_C)StreamKind, StreamNumber, Parameter.c_str(), OldValue.c_str());};
     String        Option (const String &Option, const String &Value=__T(""))  {return MediaInfo_Option (Handle, Option.c_str(), Value.c_str());};
-    static String Option_Static (const String &Option, const String &Value=__T(""))  {return MediaInfo_Option (NULL, Option.c_str(), Value.c_str());};
-    size_t        State_Get ()  {return MediaInfo_State_Get(Handle);};
-    size_t        Count_Get (stream_t StreamKind, size_t StreamNumber=-1)  {return MediaInfo_Count_Get(Handle, (MediaInfo_stream_C)StreamKind, StreamNumber);};
 
 private :
     void* Handle;
@@ -486,21 +445,13 @@ public :
 
     //File
     size_t Open (const String &File, const fileoptions_t Options=FileOption_Nothing) {return MediaInfoList_Open(Handle, File.c_str(), (MediaInfo_fileoptions_C)Options);};
-    size_t Open (const unsigned char* Begin, size_t Begin_Size, const unsigned char* End=NULL, size_t End_Size=NULL) {return MediaInfoList_Open_Buffer(Handle, Begin, Begin_Size, End, End_Size);};
-    size_t Save (size_t FilePos) {return MediaInfoList_Save(Handle, FilePos);};
     void Close (size_t FilePos=-1) {return MediaInfoList_Close(Handle, FilePos);};
 
     //General information
     String Inform (size_t FilePos=-1)  {return MediaInfoList_Inform(Handle, FilePos, 0);};
     String Get (size_t FilePos, stream_t StreamKind, size_t StreamNumber, size_t Parameter, info_t InfoKind=Info_Text)  {return MediaInfoList_GetI (Handle, FilePos, (MediaInfo_stream_C)StreamKind, StreamNumber, Parameter, (MediaInfo_info_C)InfoKind);};
     String Get (size_t FilePos, stream_t StreamKind, size_t StreamNumber, const String &Parameter, info_t InfoKind=Info_Text, info_t SearchKind=Info_Name)  {return MediaInfoList_Get (Handle, FilePos, (MediaInfo_stream_C)StreamKind, StreamNumber, Parameter.c_str(), (MediaInfo_info_C)InfoKind, (MediaInfo_info_C)SearchKind);};
-    size_t Set (const String &ToSet, size_t FilePos, stream_t StreamKind, size_t StreamNumber, size_t Parameter, const String &OldValue=__T(""))  {return MediaInfoList_SetI (Handle, ToSet.c_str(), FilePos, (MediaInfo_stream_C)StreamKind, StreamNumber, Parameter, OldValue.c_str());};
-    size_t Set (const String &ToSet, size_t FilePos, stream_t StreamKind, size_t StreamNumber, const String &Parameter, const String &OldValue=__T(""))  {return MediaInfoList_Set (Handle, ToSet.c_str(), FilePos, (MediaInfo_stream_C)StreamKind, StreamNumber, Parameter.c_str(), OldValue.c_str());};
     String        Option (const String &Option, const String &Value=__T(""))  {return MediaInfoList_Option (Handle, Option.c_str(), Value.c_str());};
-    static String Option_Static (const String &Option, const String &Value=__T(""))  {return MediaInfoList_Option (NULL, Option.c_str(), Value.c_str());};
-    size_t        State_Get ()  {return MediaInfoList_State_Get(Handle);};
-    size_t        Count_Get (size_t FilePos, stream_t StreamKind, size_t StreamNumber=-1)  {return MediaInfoList_Count_Get(Handle, FilePos, (MediaInfo_stream_C)StreamKind, StreamNumber);};
-    size_t        Count_Get ()  {return MediaInfoList_Count_Get_Files(Handle);};
 
 private :
     void* Handle;
