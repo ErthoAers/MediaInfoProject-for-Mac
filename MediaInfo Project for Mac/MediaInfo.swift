@@ -99,7 +99,7 @@ final public class MediaInfo {
                     height:         Int(MediaInfo.MI.get(Video, i, "Height")) ?? 0,
                     width:          Int(MediaInfo.MI.get(Video, i, "Width")) ?? 0,
                     language:       MediaInfo.MI.get(Video, i, "Language/String3").uppercased(),
-                    delay:          (MediaInfo.MI.get(Video, 0, "Delay") == "" || MediaInfo.MI.get(Video, 0, "Delay") == "0") ? false : true))
+                    delay:          MediaInfo.MI.get(Video, i, "Delay") != "" && MediaInfo.MI.get(Video, i, "Delay") != "0"))
         }
         
         for i in 0..<GeneralInfos.audioCount {
@@ -110,7 +110,7 @@ final public class MediaInfo {
                     bitDepth:   Int(MediaInfo.MI.get(Audio, i, "BitDepth")) ?? 0,
                     duration:   Int(Double(MediaInfo.MI.get(Audio, i, "Duration")) ?? 0),
                     language:   MediaInfo.MI.get(Audio, i, "Language/String3").uppercased(),
-                    delay:      (MediaInfo.MI.get(Audio, 0, "Delay") == "" || MediaInfo.MI.get(Audio, 0, "Delay") == "0") ? false : true))
+                    delay:      MediaInfo.MI.get(Audio, i, "Delay") != "" && MediaInfo.MI.get(Audio, i, "Delay") != "0"))
         }
         
         let chapterBlock = { (i: Int) -> [Substring] in

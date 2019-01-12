@@ -21,46 +21,24 @@
 
 /*---------------------------------------------------------------------------*/
 /*MacOS X*/
-#if defined(__APPLE__) && defined(__MACH__)
-    #ifndef MACOSX
-        #define MACOSX
-    #endif
-    #ifndef _MACOSX
-        #define _MACOSX
-    #endif
-    #ifndef __MACOSX__
-        #define __MACOSX__ 1
-    #endif
+#ifndef MACOSX
+    #define MACOSX
 #endif
-
-/*Test of targets*/
-#if defined(WINDOWS) && defined(UNIX) && defined(MACOS) && defined(MACOSX)
-    #pragma message Multiple platforms???
+#ifndef _MACOSX
+    #define _MACOSX
 #endif
-
-#if !defined(WIN32) && !defined(UNIX) && !defined(MACOS) && !defined(MACOSX)
-    #pragma message No known platforms, assume default
+#ifndef __MACOSX__
+    #define __MACOSX__ 1
 #endif
 
 /*-------------------------------------------------------------------------*/
 #undef MEDIAINFO_EXP
-#if defined(__WINDOWS__) && !defined(__MINGW32__) //MinGW32 does not support _declspec
-    #ifdef MEDIAINFO_DLL_EXPORT
-        #if defined(MEDIAINFODLL_EXPORTS_NODLLEXPORT)
-            #define MEDIAINFO_EXP extern
-        #else //!defined(MEDIAINFODLL_EXPORTS_NODLLEXPORT)
-            #define MEDIAINFO_EXP extern _declspec(dllexport)
-        #endif //!defined(MEDIAINFODLL_EXPORTS_NODLLEXPORT)
-    #else
-        #define MEDIAINFO_EXP extern _declspec(dllimport)
-    #endif
-#else //defined(__WINDOWS__) && !defined(__MINGW32__)
-    #if __GNUC__ >= 4
-        #define MEDIAINFO_EXP __attribute__ ((visibility("default")))
-    #else
-        #define MEDIAINFO_EXP
-    #endif
-#endif //defined(__WINDOWS__) && !defined(__MINGW32__)
+
+#if __GNUC__ >= 4
+    #define MEDIAINFO_EXP __attribute__ ((visibility("default")))
+#else
+    #define MEDIAINFO_EXP
+#endif
 
 #if !defined(__WINDOWS__)
     #define __stdcall //Supported only on windows
@@ -82,17 +60,9 @@
 
 /*-------------------------------------------------------------------------*/
 /*64-bit int                                                               */
-#if defined(__MINGW32__) || defined(__CYGWIN32__) || defined(__UNIX__) || defined(__MACOSX__)
-    #undef  MAXTYPE_INT
-    #define MAXTYPE_INT 64
-    typedef unsigned long long  MediaInfo_int64u;
-#elif defined(__WIN32__) ||  defined(_WIN32)
-    #undef  MAXTYPE_INT
-    #define MAXTYPE_INT 64
-    typedef unsigned __int64    MediaInfo_int64u;
-#else
-    #pragma message This machine has no 64-bit integer type?
-#endif
+#undef  MAXTYPE_INT
+#define MAXTYPE_INT 64
+typedef unsigned long long  MediaInfo_int64u;
 /*-------------------------------------------------------------------------*/
 
 /** @brief Kinds of Stream */
@@ -122,25 +92,6 @@ typedef enum MediaInfo_info_t
     MediaInfo_Info_Max
 } MediaInfo_info_C;
 
-/** @brief Option if InfoKind = Info_Options */
-typedef enum MediaInfo_infooptions_t
-{
-    MediaInfo_InfoOption_ShowInInform,
-    MediaInfo_InfoOption_Reserved,
-    MediaInfo_InfoOption_ShowInSupported,
-    MediaInfo_InfoOption_TypeOfValue,
-    MediaInfo_InfoOption_Max
-} MediaInfo_infooptions_C;
-
-/** @brief File opening options */
-typedef enum MediaInfo_fileoptions_t
-{
-    MediaInfo_FileOption_Nothing     = 0x00,
-    MediaInfo_FileOption_NoRecursive = 0x01,
-    MediaInfo_FileOption_CloseAll    = 0x02,
-    MediaInfo_FileOption_Max         = 0x04
-} MediaInfo_fileoptions_C;
-
 #ifdef __cplusplus
 extern "C"
 {
@@ -156,90 +107,21 @@ DLL wrapper for MediaInfo.h \n
 */
 /***************************************************************************/
 
-#if defined(MEDIAINFO_DLL_EXPORT) || (defined(UNICODE) || defined(_UNICODE)) //DLL construction or Unicode
-/** @brief A 'new' MediaInfo interface, return a Handle, don't forget to delete it after using it*/
-MEDIAINFO_EXP void*             __stdcall MediaInfo_New (); /*you must ALWAYS call MediaInfo_Delete(Handle) in order to free memory*/
-/** @brief A 'new' MediaInfo interface (with a quick init of useful options : "**VERSION**;**APP_NAME**;**APP_VERSION**", but without debug information, use it only if you know what you do), return a Handle, don't forget to delete it after using it*/
-MEDIAINFO_EXP void*             __stdcall MediaInfo_New_Quick (const wchar_t* File, const wchar_t* Options); /*you must ALWAYS call MediaInfo_Delete(Handle) in order to free memory*/
-/** @brief Delete a MediaInfo interface*/
-MEDIAINFO_EXP void              __stdcall MediaInfo_Delete (void* Handle);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Open (with a filename)*/
-MEDIAINFO_EXP size_t            __stdcall MediaInfo_Open (void* Handle, const wchar_t* File);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Open (with a buffer) */
-MEDIAINFO_EXP size_t            __stdcall MediaInfo_Open_Buffer (void* Handle, const unsigned char* Begin, size_t Begin_Size, const unsigned char* End, size_t End_Size); /*return Handle*/
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Open (with a buffer, Init) */
-MEDIAINFO_EXP size_t            __stdcall MediaInfo_Open_Buffer_Init (void* Handle, MediaInfo_int64u File_Size, MediaInfo_int64u File_Offset);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Open (with a buffer, Continue) */
-MEDIAINFO_EXP size_t            __stdcall MediaInfo_Open_Buffer_Continue (void* Handle, MediaInfo_int8u* Buffer, size_t Buffer_Size);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Open (with a buffer, Continue_GoTo_Get) */
-MEDIAINFO_EXP MediaInfo_int64u  __stdcall MediaInfo_Open_Buffer_Continue_GoTo_Get (void* Handle);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Open (with a buffer, Finalize) */
-MEDIAINFO_EXP size_t            __stdcall MediaInfo_Open_Buffer_Finalize (void* Handle);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Open (NextPacket) */
-MEDIAINFO_EXP size_t            __stdcall MediaInfo_Open_NextPacket (void* Handle);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Save */
-MEDIAINFO_EXP size_t            __stdcall MediaInfo_Save (void* Handle);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Close */
-MEDIAINFO_EXP void              __stdcall MediaInfo_Close (void* Handle);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Inform */
-MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfo_Inform (void* Handle, size_t Reserved); /*Default : Reserved=0*/
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Get */
-MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfo_GetI (void* Handle, MediaInfo_stream_C StreamKind, size_t StreamNumber, size_t Parameter, MediaInfo_info_C InfoKind); /*Default : InfoKind=Info_Text*/
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Get */
-MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfo_Get (void* Handle, MediaInfo_stream_C StreamKind, size_t StreamNumber, const wchar_t* Parameter, MediaInfo_info_C InfoKind, MediaInfo_info_C SearchKind); /*Default : InfoKind=Info_Text, SearchKind=Info_Name*/
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Output_Buffer_Get */
-MEDIAINFO_EXP size_t            __stdcall MediaInfo_Output_Buffer_Get (void* Handle, const wchar_t* Value);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Output_Buffer_Get */
-MEDIAINFO_EXP size_t            __stdcall MediaInfo_Output_Buffer_GetI (void* Handle, size_t Pos);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Option */
-MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfo_Option (void* Handle, const wchar_t* Option, const wchar_t* Value);
-#else //defined(MEDIAINFO_DLL_EXPORT) || (defined(UNICODE) || defined(_UNICODE))
-    #define MediaInfo_New               MediaInfoA_New
-    #define MediaInfo_New_Quick         MediaInfoA_New_Quick
-    #define MediaInfo_Delete            MediaInfoA_Delete
-    #define MediaInfo_Open              MediaInfoA_Open
-    #define MediaInfo_Open_Buffer       MediaInfoA_Open_Buffer
-    #define MediaInfo_Open_Buffer_Init              MediaInfoA_Open_Buffer_Init
-    #define MediaInfo_Open_Buffer_Continue          MediaInfoA_Open_Buffer_Continue
-    #define MediaInfo_Open_Buffer_Continue_GoTo_Get MediaInfoA_Open_Buffer_Continue_GoTo_Get
-    #define MediaInfo_Open_Buffer_Finalize          MediaInfoA_Open_Buffer_Finalize
-    #define MediaInfo_Open_NextPacket               MediaInfoA_Open_NextPacket
-    #define MediaInfo_Save              MediaInfoA_Save
-    #define MediaInfo_Close             MediaInfoA_Close
-    #define MediaInfo_Inform            MediaInfoA_Inform
-    #define MediaInfo_GetI              MediaInfoA_GetI
-    #define MediaInfo_Get               MediaInfoA_Get
-    #define MediaInfo_SetI              MediaInfoA_SetI
-    #define MediaInfo_Set               MediaInfoA_Set
-    #define MediaInfo_Output_Buffer_Get MediaInfoA_Output_Buffer_Get
-    #define MediaInfo_Output_Buffer_GetI MediaInfoA_Output_Buffer_GetI
-    #define MediaInfo_Option            MediaInfoA_Option
-    #define MediaInfo_State_Get         MediaInfoA_State_Get
-    #define MediaInfo_Count_Get         MediaInfoA_Count_Get
-#endif //defined(MEDIAINFO_DLL_EXPORT) || (defined(UNICODE) || defined(_UNICODE))
+#define MediaInfo_New               MediaInfoA_New
+#define MediaInfo_Delete            MediaInfoA_Delete
+#define MediaInfo_Open              MediaInfoA_Open
+#define MediaInfo_Close             MediaInfoA_Close
+#define MediaInfo_Inform            MediaInfoA_Inform
+#define MediaInfo_GetI              MediaInfoA_GetI
+#define MediaInfo_Get               MediaInfoA_Get
+#define MediaInfo_Option            MediaInfoA_Option
 
 /** @brief A 'new' MediaInfo interface, return a Handle, don't forget to delete it after using it*/
 MEDIAINFO_EXP void*             __stdcall MediaInfoA_New (); /*you must ALWAYS call MediaInfo_Delete(Handle) in order to free memory*/
-/** @brief A 'new' MediaInfo interface (with a quick init of useful options : "**VERSION**;**APP_NAME**;**APP_VERSION**", but without debug information, use it only if you know what you do), return a Handle, don't forget to delete it after using it*/
-MEDIAINFO_EXP void*             __stdcall MediaInfoA_New_Quick (const char* File, const char* Options); /*you must ALWAYS call MediaInfo_Delete(Handle) in order to free memory*/
 /** @brief Delete a MediaInfo interface*/
 MEDIAINFO_EXP void              __stdcall MediaInfoA_Delete (void* Handle);
 /** @brief Wrapper for MediaInfoLib::MediaInfo::Open (with a filename)*/
 MEDIAINFO_EXP size_t            __stdcall MediaInfoA_Open (void* Handle, const char* File); /*you must ALWAYS call MediaInfo_Close(Handle) in order to free memory*/
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Open (with a buffer) */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoA_Open_Buffer (void* Handle, const unsigned char* Begin, size_t Begin_Size, const unsigned char* End, size_t End_Size); /*return Handle*/
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Open (with a buffer, Init) */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoA_Open_Buffer_Init (void* Handle, MediaInfo_int64u File_Size, MediaInfo_int64u File_Offset);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Open (with a buffer, Continue) */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoA_Open_Buffer_Continue (void* Handle, MediaInfo_int8u* Buffer, size_t Buffer_Size);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Open (with a buffer, Continue_GoTo_Get) */
-MEDIAINFO_EXP MediaInfo_int64u  __stdcall MediaInfoA_Open_Buffer_Continue_GoTo_Get (void* Handle);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Open (with a buffer, Finalize) */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoA_Open_Buffer_Finalize (void* Handle);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Open (NextPacket) */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoA_Open_NextPacket (void* Handle);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Save */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoA_Save (void* Handle);
 /** @brief Wrapper for MediaInfoLib::MediaInfo::Close */
 MEDIAINFO_EXP void              __stdcall MediaInfoA_Close (void* Handle);
 /** @brief Wrapper for MediaInfoLib::MediaInfo::Inform */
@@ -248,87 +130,8 @@ MEDIAINFO_EXP const char*       __stdcall MediaInfoA_Inform (void* Handle, size_
 MEDIAINFO_EXP const char*       __stdcall MediaInfoA_GetI (void* Handle, MediaInfo_stream_C StreamKind, size_t StreamNumber, size_t Parameter, MediaInfo_info_C InfoKind); /*Default : InfoKind=Info_Text*/
 /** @brief Wrapper for MediaInfoLib::MediaInfo::Get */
 MEDIAINFO_EXP const char*       __stdcall MediaInfoA_Get (void* Handle, MediaInfo_stream_C StreamKind, size_t StreamNumber, const char* Parameter, MediaInfo_info_C InfoKind, MediaInfo_info_C SearchKind); /*Default : InfoKind=Info_Text, SearchKind=Info_Name*/
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Output_Buffer_Get */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoA_Output_Buffer_Get (void* Handle, const char* Value);
-/** @brief Wrapper for MediaInfoLib::MediaInfo::Output_Buffer_Get */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoA_Output_Buffer_GetI (void* Handle, size_t Pos);
 /** @brief Wrapper for MediaInfoLib::MediaInfo::Option */
 MEDIAINFO_EXP const char*       __stdcall MediaInfoA_Option (void* Handle, const char* Option, const char* Value);
-
-
-#if defined(MEDIAINFO_DLL_EXPORT) || (defined(UNICODE) || defined(_UNICODE)) //DLL construction or Unicode
-/** @brief A 'new' MediaInfoList interface, return a Handle, don't forget to delete it after using it*/
-MEDIAINFO_EXP void*             __stdcall MediaInfoList_New (); /*you must ALWAYS call MediaInfoList_Delete(Handle) in order to free memory*/
-/** @brief A 'new' MediaInfoList interface (with a quick init of useful options : "**VERSION**;**APP_NAME**;**APP_VERSION**", but without debug information, use it only if you know what you do), return a Handle, don't forget to delete it after using it*/
-MEDIAINFO_EXP void*             __stdcall MediaInfoList_New_Quick (const wchar_t* Files, const wchar_t* Config); /*you must ALWAYS call MediaInfoList_Delete(Handle) in order to free memory*/
-/** @brief Delete a MediaInfoList interface*/
-MEDIAINFO_EXP void              __stdcall MediaInfoList_Delete (void* Handle);
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Open (with a filename)*/
-MEDIAINFO_EXP size_t            __stdcall MediaInfoList_Open (void* Handle, const wchar_t* Files, const MediaInfo_fileoptions_C Options); /*Default : Options=MediaInfo_FileOption_Nothing*/
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Open (with a buffer) */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoList_Open_Buffer (void* Handle, const unsigned char* Begin, size_t Begin_Size, const unsigned char* End, size_t End_Size); /*return Handle*/
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Save */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoList_Save (void* Handle, size_t FilePos);
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Close */
-MEDIAINFO_EXP void              __stdcall MediaInfoList_Close (void* Handle, size_t FilePos);
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Inform */
-MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfoList_Inform (void* Handle, size_t FilePos, size_t Reserved); /*Default : Reserved=0*/
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Get */
-MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfoList_GetI (void* Handle, size_t FilePos, MediaInfo_stream_C StreamKind, size_t StreamNumber, size_t Parameter, MediaInfo_info_C InfoKind); /*Default : InfoKind=Info_Text*/
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Get */
-MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfoList_Get (void* Handle, size_t FilePos, MediaInfo_stream_C StreamKind, size_t StreamNumber, const wchar_t* Parameter, MediaInfo_info_C InfoKind, MediaInfo_info_C SearchKind); /*Default : InfoKind=Info_Text, SearchKind=Info_Name*/
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Option */
-MEDIAINFO_EXP const wchar_t*    __stdcall MediaInfoList_Option (void* Handle, const wchar_t* Option, const wchar_t* Value);
-#else //defined(MEDIAINFO_DLL_EXPORT) || (defined(UNICODE) || defined(_UNICODE))
-    #define MediaInfoList_New               MediaInfoListA_New
-    #define MediaInfoList_New_Quick         MediaInfoListA_New_Quick
-    #define MediaInfoList_Delete            MediaInfoListA_Delete
-    #define MediaInfoList_Open              MediaInfoListA_Open
-    #define MediaInfoList_Open_Buffer       MediaInfoListA_Open_Buffer
-    #define MediaInfoList_Save              MediaInfoListA_Save
-    #define MediaInfoList_Save_All          MediaInfoListA_Save_All
-    #define MediaInfoList_Close             MediaInfoListA_Close
-    #define MediaInfoList_Close_All         MediaInfoListA_Close_All
-    #define MediaInfoList_Inform            MediaInfoListA_Inform
-    #define MediaInfoList_Inform_All        MediaInfoListA_Inform_All
-    #define MediaInfoList_GetI              MediaInfoListA_GetI
-    #define MediaInfoList_Get               MediaInfoListA_Get
-    #define MediaInfoList_SetI              MediaInfoListA_SetI
-    #define MediaInfoList_Set               MediaInfoListA_Set
-    #define MediaInfoList_Option            MediaInfoListA_Option
-    #define MediaInfoList_State_Get         MediaInfoListA_State_Get
-    #define MediaInfoList_Count_Get         MediaInfoListA_Count_Get
-    #define MediaInfoList_Count_Get_Files   MediaInfoListA_Count_Get_Files
-#endif //defined(MEDIAINFO_DLL_EXPORT) || (defined(UNICODE) || defined(_UNICODE))
-
-/* Warning : Deprecated, use MediaInfo_Option("Info_Version", "**YOUR VERSION COMPATIBLE**") instead */
-MEDIAINFO_EXP const char*       __stdcall MediaInfo_Info_Version ();
-
-
-/** @brief A 'new' MediaInfoList interface, return a Handle, don't forget to delete it after using it*/
-MEDIAINFO_EXP void*             __stdcall MediaInfoListA_New (); /*you must ALWAYS call MediaInfoList_Delete(Handle) in order to free memory*/
-/** @brief A 'new' MediaInfoList interface (with a quick init of useful options : "**VERSION**;**APP_NAME**;**APP_VERSION**", but without debug information, use it only if you know what you do), return a Handle, don't forget to delete it after using it*/
-MEDIAINFO_EXP void*             __stdcall MediaInfoListA_New_Quick (const char* Files, const char* Config); /*you must ALWAYS call MediaInfoList_Delete(Handle) in order to free memory*/
-/** @brief Delete a MediaInfoList interface*/
-MEDIAINFO_EXP void              __stdcall MediaInfoListA_Delete (void* Handle);
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Open (with a filename)*/
-MEDIAINFO_EXP size_t            __stdcall MediaInfoListA_Open (void* Handle, const char* Files, const MediaInfo_fileoptions_C Options); /*Default : Options=0*/
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Open (with a buffer) */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoListA_Open_Buffer (void* Handle, const unsigned char* Begin, size_t Begin_Size, const unsigned char* End, size_t End_Size); /*return Handle*/
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Save */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoListA_Save (void* Handle, size_t FilePos);
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Close */
-MEDIAINFO_EXP void              __stdcall MediaInfoListA_Close (void* Handle, size_t FilePos);
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Inform */
-MEDIAINFO_EXP const char*       __stdcall MediaInfoListA_Inform (void* Handle, size_t FilePos, size_t Reserved); /*Default : Reserved=0*/
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Get */
-MEDIAINFO_EXP const char*       __stdcall MediaInfoListA_GetI (void* Handle, size_t FilePos, MediaInfo_stream_C StreamKind, size_t StreamNumber, size_t Parameter, MediaInfo_info_C InfoKind); /*Default : InfoKind=Info_Text*/
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Get */
-MEDIAINFO_EXP const char*       __stdcall MediaInfoListA_Get (void* Handle, size_t FilePos, MediaInfo_stream_C StreamKind, size_t StreamNumber, const char* Parameter, MediaInfo_info_C InfoKind, MediaInfo_info_C SearchKind); /*Default : InfoKind=Info_Text, SearchKind=Info_Name*/
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Option */
-MEDIAINFO_EXP const char*       __stdcall MediaInfoListA_Option (void* Handle, const char* Option, const char* Value);
-/** @brief Wrapper for MediaInfoListLib::MediaInfoList::Count_Get */
-MEDIAINFO_EXP size_t            __stdcall MediaInfoListA_Count_Get_Files (void* Handle);
 
 #ifdef __cplusplus
 }
@@ -394,28 +197,6 @@ enum info_t
     Info_Max
 };
 
-/// Get(...)[infooptions_t] return a string like "YNYN..." \n
-/// Use this enum to know at what correspond the Y (Yes) or N (No)
-/// If Get(...)[0]==Y, then :
-/// @brief Option if InfoKind = Info_Options
-enum infooptions_t
-{
-    InfoOption_ShowInInform,        ///< Show this parameter in Inform()
-    InfoOption_Reserved,            ///<
-    InfoOption_ShowInSupported,     ///< Internal use only (info : Must be showed in Info_Capacities())
-    InfoOption_TypeOfValue,         ///< Value return by a standard Get() can be : T (Text), I (Integer, warning up to 64 bits), F (Float), D (Date), B (Binary datas coded Base64) (Numbers are in Base 10)
-    InfoOption_Max
-};
-
-/// @brief File opening options
-enum fileoptions_t
-{
-    FileOption_Nothing     = 0x00,
-    FileOption_NoRecursive = 0x01,  ///< Do not browse folders recursively
-    FileOption_CloseAll    = 0x02,  ///< Close all files before open
-    FileOption_Max         = 0x04
-};
-
 //---------------------------------------------------------------------------
 class MediaInfo
 {
@@ -437,29 +218,8 @@ private :
     void* Handle;
 };
 
-class MediaInfoList
-{
-public :
-    MediaInfoList ()                {Handle=MediaInfoList_New();};
-    ~MediaInfoList ()               {MediaInfoList_Delete(Handle);};
-
-    //File
-    size_t Open (const String &File, const fileoptions_t Options=FileOption_Nothing) {return MediaInfoList_Open(Handle, File.c_str(), (MediaInfo_fileoptions_C)Options);};
-    void Close (size_t FilePos=-1) {return MediaInfoList_Close(Handle, FilePos);};
-
-    //General information
-    String Inform (size_t FilePos=-1)  {return MediaInfoList_Inform(Handle, FilePos, 0);};
-    String Get (size_t FilePos, stream_t StreamKind, size_t StreamNumber, size_t Parameter, info_t InfoKind=Info_Text)  {return MediaInfoList_GetI (Handle, FilePos, (MediaInfo_stream_C)StreamKind, StreamNumber, Parameter, (MediaInfo_info_C)InfoKind);};
-    String Get (size_t FilePos, stream_t StreamKind, size_t StreamNumber, const String &Parameter, info_t InfoKind=Info_Text, info_t SearchKind=Info_Name)  {return MediaInfoList_Get (Handle, FilePos, (MediaInfo_stream_C)StreamKind, StreamNumber, Parameter.c_str(), (MediaInfo_info_C)InfoKind, (MediaInfo_info_C)SearchKind);};
-    String        Option (const String &Option, const String &Value=__T(""))  {return MediaInfoList_Option (Handle, Option.c_str(), Value.c_str());};
-
-private :
-    void* Handle;
-};
-
 } //NameSpace
 #endif//#if !defined(MediaInfoH) && !defined(MEDIAINFO_DLL_EXPORT) && !(defined(UNICODE) || defined(_UNICODE))
 #endif /*__cplusplus*/
-
 
 #endif
