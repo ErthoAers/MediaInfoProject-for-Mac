@@ -7,31 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E90EEDEE21E627E200708444 /* ColorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EEDED21E627E200708444 /* ColorConverter.swift */; };
-		E90EEDF121E6E80400708444 /* libmediainfo.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E968341021E326A5002FD5DB /* libmediainfo.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		E90EEDF221E6E80400708444 /* libzen.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E968341121E326A5002FD5DB /* libzen.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		E96833FB21E32302002FD5DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96833FA21E32302002FD5DB /* AppDelegate.swift */; };
-		E96833FD21E32302002FD5DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96833FC21E32302002FD5DB /* ViewController.swift */; };
-		E96833FF21E32304002FD5DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96833FE21E32304002FD5DB /* Assets.xcassets */; };
-		E968340B21E3234C002FD5DB /* MediaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968340A21E3234C002FD5DB /* MediaInfo.swift */; };
-		E968340E21E3236E002FD5DB /* MediaInfoWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = E968340D21E3236E002FD5DB /* MediaInfoWrapper.mm */; };
-		E968341221E326A5002FD5DB /* libmediainfo.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E968341021E326A5002FD5DB /* libmediainfo.0.dylib */; };
-		E968341321E326A5002FD5DB /* libzen.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E968341121E326A5002FD5DB /* libzen.0.dylib */; };
-		E968341721E3A245002FD5DB /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968341621E3A245002FD5DB /* WindowController.swift */; };
-		E968341921E3A257002FD5DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E968341821E3A257002FD5DB /* Main.storyboard */; };
-		E968341B21E3A3EB002FD5DB /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968341A21E3A3EB002FD5DB /* FileLoader.swift */; };
-		E968341D21E47ADA002FD5DB /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968341C21E47ADA002FD5DB /* ViewController+Extension.swift */; };
+		E93E6F4C21E9D40E00F3CDCB /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93E6F4521E9D40D00F3CDCB /* ViewController+Extension.swift */; };
+		E93E6F4D21E9D40E00F3CDCB /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93E6F4621E9D40D00F3CDCB /* WindowController.swift */; };
+		E93E6F4E21E9D40E00F3CDCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93E6F4721E9D40D00F3CDCB /* ViewController.swift */; };
+		E93E6F4F21E9D40E00F3CDCB /* MediaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93E6F4821E9D40E00F3CDCB /* MediaInfo.swift */; };
+		E93E6F5021E9D40E00F3CDCB /* ColorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93E6F4921E9D40E00F3CDCB /* ColorConverter.swift */; };
+		E93E6F5121E9D40E00F3CDCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93E6F4A21E9D40E00F3CDCB /* AppDelegate.swift */; };
+		E93E6F5221E9D40E00F3CDCB /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93E6F4B21E9D40E00F3CDCB /* FileLoader.swift */; };
+		E93E6F5521E9D41800F3CDCB /* MediaInfoWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = E93E6F5421E9D41800F3CDCB /* MediaInfoWrapper.mm */; };
+		E93E6F5F21E9D4CE00F3CDCB /* libmediainfo.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E93E6F5D21E9D4CE00F3CDCB /* libmediainfo.0.dylib */; };
+		E93E6F6021E9D4CE00F3CDCB /* libzen.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E93E6F5E21E9D4CE00F3CDCB /* libzen.0.dylib */; };
+		E93E6F6121E9D4D500F3CDCB /* libmediainfo.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E93E6F5D21E9D4CE00F3CDCB /* libmediainfo.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		E93E6F6221E9D4D500F3CDCB /* libzen.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E93E6F5E21E9D4CE00F3CDCB /* libzen.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		E93E6F6421E9D50B00F3CDCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E93E6F6321E9D50B00F3CDCB /* Main.storyboard */; };
+		E991BA5221E9D1F7003A63E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E991BA5121E9D1F7003A63E6 /* Assets.xcassets */; };
+		E991BA6121E9D1F7003A63E6 /* MediaInfo_Project_for_MacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991BA6021E9D1F7003A63E6 /* MediaInfo_Project_for_MacTests.swift */; };
+		E991BA6C21E9D1F7003A63E6 /* MediaInfo_Project_for_MacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991BA6B21E9D1F7003A63E6 /* MediaInfo_Project_for_MacUITests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E991BA5D21E9D1F7003A63E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E991BA4221E9D1F6003A63E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E991BA4921E9D1F6003A63E6;
+			remoteInfo = "MediaInfo Project for Mac";
+		};
+		E991BA6821E9D1F7003A63E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E991BA4221E9D1F6003A63E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E991BA4921E9D1F6003A63E6;
+			remoteInfo = "MediaInfo Project for Mac";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
-		E90EEDF321E6E80400708444 /* Embed Libraries */ = {
+		E93E6F5C21E9D4B600F3CDCB /* Embed Libraries */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E90EEDF221E6E80400708444 /* libzen.0.dylib in Embed Libraries */,
-				E90EEDF121E6E80400708444 /* libmediainfo.0.dylib in Embed Libraries */,
+				E93E6F6221E9D4D500F3CDCB /* libzen.0.dylib in Embed Libraries */,
+				E93E6F6121E9D4D500F3CDCB /* libmediainfo.0.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,88 +58,140 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E90EEDED21E627E200708444 /* ColorConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConverter.swift; sourceTree = "<group>"; };
-		E96833F721E32302002FD5DB /* MediaInfo Project for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MediaInfo Project for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E96833FA21E32302002FD5DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E96833FC21E32302002FD5DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E96833FE21E32304002FD5DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E968340321E32304002FD5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E968340421E32304002FD5DB /* MediaInfo_Project_for_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MediaInfo_Project_for_Mac.entitlements; sourceTree = "<group>"; };
-		E968340A21E3234C002FD5DB /* MediaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfo.swift; sourceTree = "<group>"; };
-		E968340C21E3236E002FD5DB /* MediaInfo Project for Mac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MediaInfo Project for Mac-Bridging-Header.h"; sourceTree = "<group>"; };
-		E968340D21E3236E002FD5DB /* MediaInfoWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MediaInfoWrapper.mm; sourceTree = "<group>"; };
-		E968340F21E32388002FD5DB /* MediaInfoWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaInfoWrapper.h; sourceTree = "<group>"; };
-		E968341021E326A5002FD5DB /* libmediainfo.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmediainfo.0.dylib; sourceTree = "<group>"; };
-		E968341121E326A5002FD5DB /* libzen.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libzen.0.dylib; sourceTree = "<group>"; };
-		E968341621E3A245002FD5DB /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		E968341821E3A257002FD5DB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		E968341A21E3A3EB002FD5DB /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
-		E968341C21E47ADA002FD5DB /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
+		E93E6F4421E9D40D00F3CDCB /* MediaInfo Project for Mac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MediaInfo Project for Mac-Bridging-Header.h"; sourceTree = "<group>"; };
+		E93E6F4521E9D40D00F3CDCB /* ViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
+		E93E6F4621E9D40D00F3CDCB /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		E93E6F4721E9D40D00F3CDCB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E93E6F4821E9D40E00F3CDCB /* MediaInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaInfo.swift; sourceTree = "<group>"; };
+		E93E6F4921E9D40E00F3CDCB /* ColorConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConverter.swift; sourceTree = "<group>"; };
+		E93E6F4A21E9D40E00F3CDCB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E93E6F4B21E9D40E00F3CDCB /* FileLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
+		E93E6F5321E9D41800F3CDCB /* MediaInfoWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaInfoWrapper.h; sourceTree = "<group>"; };
+		E93E6F5421E9D41800F3CDCB /* MediaInfoWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MediaInfoWrapper.mm; sourceTree = "<group>"; };
+		E93E6F5D21E9D4CE00F3CDCB /* libmediainfo.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmediainfo.0.dylib; sourceTree = "<group>"; };
+		E93E6F5E21E9D4CE00F3CDCB /* libzen.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libzen.0.dylib; sourceTree = "<group>"; };
+		E93E6F6321E9D50B00F3CDCB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E93E6F6621E9D7AA00F3CDCB /* MediaInfoDLL_Static.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaInfoDLL_Static.h; sourceTree = "<group>"; };
+		E991BA4A21E9D1F6003A63E6 /* MediaInfo Project for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MediaInfo Project for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E991BA5121E9D1F7003A63E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E991BA5621E9D1F7003A63E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E991BA5721E9D1F7003A63E6 /* MediaInfo_Project_for_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MediaInfo_Project_for_Mac.entitlements; sourceTree = "<group>"; };
+		E991BA5C21E9D1F7003A63E6 /* MediaInfo Project for MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MediaInfo Project for MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E991BA6021E9D1F7003A63E6 /* MediaInfo_Project_for_MacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfo_Project_for_MacTests.swift; sourceTree = "<group>"; };
+		E991BA6221E9D1F7003A63E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E991BA6721E9D1F7003A63E6 /* MediaInfo Project for MacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MediaInfo Project for MacUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E991BA6B21E9D1F7003A63E6 /* MediaInfo_Project_for_MacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfo_Project_for_MacUITests.swift; sourceTree = "<group>"; };
+		E991BA6D21E9D1F7003A63E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E96833F421E32302002FD5DB /* Frameworks */ = {
+		E991BA4721E9D1F6003A63E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E968341321E326A5002FD5DB /* libzen.0.dylib in Frameworks */,
-				E968341221E326A5002FD5DB /* libmediainfo.0.dylib in Frameworks */,
+				E93E6F6021E9D4CE00F3CDCB /* libzen.0.dylib in Frameworks */,
+				E93E6F5F21E9D4CE00F3CDCB /* libmediainfo.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E991BA5921E9D1F7003A63E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E991BA6421E9D1F7003A63E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E96833EE21E32302002FD5DB = {
+		E93E6F6521E9D78000F3CDCB /* MediaInfoDLL */ = {
 			isa = PBXGroup;
 			children = (
-				E96833F921E32302002FD5DB /* MediaInfo Project for Mac */,
-				E96833F821E32302002FD5DB /* Products */,
+				E93E6F6621E9D7AA00F3CDCB /* MediaInfoDLL_Static.h */,
+			);
+			path = MediaInfoDLL;
+			sourceTree = "<group>";
+		};
+		E991BA4121E9D1F6003A63E6 = {
+			isa = PBXGroup;
+			children = (
+				E991BA4C21E9D1F6003A63E6 /* MediaInfo Project for Mac */,
+				E991BA5F21E9D1F7003A63E6 /* MediaInfo Project for MacTests */,
+				E991BA6A21E9D1F7003A63E6 /* MediaInfo Project for MacUITests */,
+				E991BA4B21E9D1F6003A63E6 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E96833F821E32302002FD5DB /* Products */ = {
+		E991BA4B21E9D1F6003A63E6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E96833F721E32302002FD5DB /* MediaInfo Project for Mac.app */,
+				E991BA4A21E9D1F6003A63E6 /* MediaInfo Project for Mac.app */,
+				E991BA5C21E9D1F7003A63E6 /* MediaInfo Project for MacTests.xctest */,
+				E991BA6721E9D1F7003A63E6 /* MediaInfo Project for MacUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E96833F921E32302002FD5DB /* MediaInfo Project for Mac */ = {
+		E991BA4C21E9D1F6003A63E6 /* MediaInfo Project for Mac */ = {
 			isa = PBXGroup;
 			children = (
-				E96833FA21E32302002FD5DB /* AppDelegate.swift */,
-				E96833FC21E32302002FD5DB /* ViewController.swift */,
-				E968341C21E47ADA002FD5DB /* ViewController+Extension.swift */,
-				E968341621E3A245002FD5DB /* WindowController.swift */,
-				E968341A21E3A3EB002FD5DB /* FileLoader.swift */,
-				E90EEDED21E627E200708444 /* ColorConverter.swift */,
-				E968340A21E3234C002FD5DB /* MediaInfo.swift */,
-				E968340D21E3236E002FD5DB /* MediaInfoWrapper.mm */,
-				E968340F21E32388002FD5DB /* MediaInfoWrapper.h */,
-				E968340C21E3236E002FD5DB /* MediaInfo Project for Mac-Bridging-Header.h */,
-				E96833FE21E32304002FD5DB /* Assets.xcassets */,
-				E968340321E32304002FD5DB /* Info.plist */,
-				E968341821E3A257002FD5DB /* Main.storyboard */,
-				E968340421E32304002FD5DB /* MediaInfo_Project_for_Mac.entitlements */,
-				E968341021E326A5002FD5DB /* libmediainfo.0.dylib */,
-				E968341121E326A5002FD5DB /* libzen.0.dylib */,
+				E93E6F6521E9D78000F3CDCB /* MediaInfoDLL */,
+				E93E6F4A21E9D40E00F3CDCB /* AppDelegate.swift */,
+				E93E6F4721E9D40D00F3CDCB /* ViewController.swift */,
+				E93E6F4521E9D40D00F3CDCB /* ViewController+Extension.swift */,
+				E93E6F4621E9D40D00F3CDCB /* WindowController.swift */,
+				E93E6F4921E9D40E00F3CDCB /* ColorConverter.swift */,
+				E93E6F4B21E9D40E00F3CDCB /* FileLoader.swift */,
+				E93E6F4821E9D40E00F3CDCB /* MediaInfo.swift */,
+				E93E6F5321E9D41800F3CDCB /* MediaInfoWrapper.h */,
+				E93E6F5421E9D41800F3CDCB /* MediaInfoWrapper.mm */,
+				E93E6F4421E9D40D00F3CDCB /* MediaInfo Project for Mac-Bridging-Header.h */,
+				E991BA5121E9D1F7003A63E6 /* Assets.xcassets */,
+				E991BA5621E9D1F7003A63E6 /* Info.plist */,
+				E991BA5721E9D1F7003A63E6 /* MediaInfo_Project_for_Mac.entitlements */,
+				E93E6F6321E9D50B00F3CDCB /* Main.storyboard */,
+				E93E6F5D21E9D4CE00F3CDCB /* libmediainfo.0.dylib */,
+				E93E6F5E21E9D4CE00F3CDCB /* libzen.0.dylib */,
 			);
 			path = "MediaInfo Project for Mac";
+			sourceTree = "<group>";
+		};
+		E991BA5F21E9D1F7003A63E6 /* MediaInfo Project for MacTests */ = {
+			isa = PBXGroup;
+			children = (
+				E991BA6021E9D1F7003A63E6 /* MediaInfo_Project_for_MacTests.swift */,
+				E991BA6221E9D1F7003A63E6 /* Info.plist */,
+			);
+			path = "MediaInfo Project for MacTests";
+			sourceTree = "<group>";
+		};
+		E991BA6A21E9D1F7003A63E6 /* MediaInfo Project for MacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E991BA6B21E9D1F7003A63E6 /* MediaInfo_Project_for_MacUITests.swift */,
+				E991BA6D21E9D1F7003A63E6 /* Info.plist */,
+			);
+			path = "MediaInfo Project for MacUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E96833F621E32302002FD5DB /* MediaInfo Project for Mac */ = {
+		E991BA4921E9D1F6003A63E6 /* MediaInfo Project for Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E968340721E32304002FD5DB /* Build configuration list for PBXNativeTarget "MediaInfo Project for Mac" */;
+			buildConfigurationList = E991BA7021E9D1F7003A63E6 /* Build configuration list for PBXNativeTarget "MediaInfo Project for Mac" */;
 			buildPhases = (
-				E96833F321E32302002FD5DB /* Sources */,
-				E96833F421E32302002FD5DB /* Frameworks */,
-				E96833F521E32302002FD5DB /* Resources */,
-				E90EEDF321E6E80400708444 /* Embed Libraries */,
+				E991BA4621E9D1F6003A63E6 /* Sources */,
+				E991BA4721E9D1F6003A63E6 /* Frameworks */,
+				E991BA4821E9D1F6003A63E6 /* Resources */,
+				E93E6F5C21E9D4B600F3CDCB /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -128,26 +199,70 @@
 			);
 			name = "MediaInfo Project for Mac";
 			productName = "MediaInfo Project for Mac";
-			productReference = E96833F721E32302002FD5DB /* MediaInfo Project for Mac.app */;
+			productReference = E991BA4A21E9D1F6003A63E6 /* MediaInfo Project for Mac.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E991BA5B21E9D1F7003A63E6 /* MediaInfo Project for MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E991BA7321E9D1F7003A63E6 /* Build configuration list for PBXNativeTarget "MediaInfo Project for MacTests" */;
+			buildPhases = (
+				E991BA5821E9D1F7003A63E6 /* Sources */,
+				E991BA5921E9D1F7003A63E6 /* Frameworks */,
+				E991BA5A21E9D1F7003A63E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E991BA5E21E9D1F7003A63E6 /* PBXTargetDependency */,
+			);
+			name = "MediaInfo Project for MacTests";
+			productName = "MediaInfo Project for MacTests";
+			productReference = E991BA5C21E9D1F7003A63E6 /* MediaInfo Project for MacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E991BA6621E9D1F7003A63E6 /* MediaInfo Project for MacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E991BA7621E9D1F7003A63E6 /* Build configuration list for PBXNativeTarget "MediaInfo Project for MacUITests" */;
+			buildPhases = (
+				E991BA6321E9D1F7003A63E6 /* Sources */,
+				E991BA6421E9D1F7003A63E6 /* Frameworks */,
+				E991BA6521E9D1F7003A63E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E991BA6921E9D1F7003A63E6 /* PBXTargetDependency */,
+			);
+			name = "MediaInfo Project for MacUITests";
+			productName = "MediaInfo Project for MacUITests";
+			productReference = E991BA6721E9D1F7003A63E6 /* MediaInfo Project for MacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E96833EF21E32302002FD5DB /* Project object */ = {
+		E991BA4221E9D1F6003A63E6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Icefires Chen";
 				TargetAttributes = {
-					E96833F621E32302002FD5DB = {
+					E991BA4921E9D1F6003A63E6 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
 					};
+					E991BA5B21E9D1F7003A63E6 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = E991BA4921E9D1F6003A63E6;
+					};
+					E991BA6621E9D1F7003A63E6 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = E991BA4921E9D1F6003A63E6;
+					};
 				};
 			};
-			buildConfigurationList = E96833F221E32302002FD5DB /* Build configuration list for PBXProject "MediaInfo Project for Mac" */;
+			buildConfigurationList = E991BA4521E9D1F6003A63E6 /* Build configuration list for PBXProject "MediaInfo Project for Mac" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -155,48 +270,93 @@
 				en,
 				Base,
 			);
-			mainGroup = E96833EE21E32302002FD5DB;
-			productRefGroup = E96833F821E32302002FD5DB /* Products */;
+			mainGroup = E991BA4121E9D1F6003A63E6;
+			productRefGroup = E991BA4B21E9D1F6003A63E6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E96833F621E32302002FD5DB /* MediaInfo Project for Mac */,
+				E991BA4921E9D1F6003A63E6 /* MediaInfo Project for Mac */,
+				E991BA5B21E9D1F7003A63E6 /* MediaInfo Project for MacTests */,
+				E991BA6621E9D1F7003A63E6 /* MediaInfo Project for MacUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E96833F521E32302002FD5DB /* Resources */ = {
+		E991BA4821E9D1F6003A63E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E96833FF21E32304002FD5DB /* Assets.xcassets in Resources */,
-				E968341921E3A257002FD5DB /* Main.storyboard in Resources */,
+				E991BA5221E9D1F7003A63E6 /* Assets.xcassets in Resources */,
+				E93E6F6421E9D50B00F3CDCB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E991BA5A21E9D1F7003A63E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E991BA6521E9D1F7003A63E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E96833F321E32302002FD5DB /* Sources */ = {
+		E991BA4621E9D1F6003A63E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E968341B21E3A3EB002FD5DB /* FileLoader.swift in Sources */,
-				E96833FD21E32302002FD5DB /* ViewController.swift in Sources */,
-				E968341721E3A245002FD5DB /* WindowController.swift in Sources */,
-				E968341D21E47ADA002FD5DB /* ViewController+Extension.swift in Sources */,
-				E96833FB21E32302002FD5DB /* AppDelegate.swift in Sources */,
-				E968340E21E3236E002FD5DB /* MediaInfoWrapper.mm in Sources */,
-				E90EEDEE21E627E200708444 /* ColorConverter.swift in Sources */,
-				E968340B21E3234C002FD5DB /* MediaInfo.swift in Sources */,
+				E93E6F5521E9D41800F3CDCB /* MediaInfoWrapper.mm in Sources */,
+				E93E6F5121E9D40E00F3CDCB /* AppDelegate.swift in Sources */,
+				E93E6F4E21E9D40E00F3CDCB /* ViewController.swift in Sources */,
+				E93E6F5221E9D40E00F3CDCB /* FileLoader.swift in Sources */,
+				E93E6F4C21E9D40E00F3CDCB /* ViewController+Extension.swift in Sources */,
+				E93E6F5021E9D40E00F3CDCB /* ColorConverter.swift in Sources */,
+				E93E6F4F21E9D40E00F3CDCB /* MediaInfo.swift in Sources */,
+				E93E6F4D21E9D40E00F3CDCB /* WindowController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E991BA5821E9D1F7003A63E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E991BA6121E9D1F7003A63E6 /* MediaInfo_Project_for_MacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E991BA6321E9D1F7003A63E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E991BA6C21E9D1F7003A63E6 /* MediaInfo_Project_for_MacUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E991BA5E21E9D1F7003A63E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E991BA4921E9D1F6003A63E6 /* MediaInfo Project for Mac */;
+			targetProxy = E991BA5D21E9D1F7003A63E6 /* PBXContainerItemProxy */;
+		};
+		E991BA6921E9D1F7003A63E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E991BA4921E9D1F6003A63E6 /* MediaInfo Project for Mac */;
+			targetProxy = E991BA6821E9D1F7003A63E6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		E968340521E32304002FD5DB /* Debug */ = {
+		E991BA6E21E9D1F7003A63E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -259,7 +419,7 @@
 			};
 			name = Debug;
 		};
-		E968340621E32304002FD5DB /* Release */ = {
+		E991BA6F21E9D1F7003A63E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -315,7 +475,7 @@
 			};
 			name = Release;
 		};
-		E968340821E32304002FD5DB /* Debug */ = {
+		E991BA7121E9D1F7003A63E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -330,6 +490,8 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/MediaInfo\\ Project\\ for\\ Mac",
+					"$(PROJECT_DIR)/MediaInfo\\ Project\\ for\\ Mac",
 					"$(PROJECT_DIR)/MediaInfo\\ Project\\ for\\ Mac",
 					"$(PROJECT_DIR)/MediaInfo\\ Project\\ for\\ Mac",
 				);
@@ -341,7 +503,7 @@
 			};
 			name = Debug;
 		};
-		E968340921E32304002FD5DB /* Release */ = {
+		E991BA7221E9D1F7003A63E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -358,6 +520,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MediaInfo\\ Project\\ for\\ Mac",
 					"$(PROJECT_DIR)/MediaInfo\\ Project\\ for\\ Mac",
+					"$(PROJECT_DIR)/MediaInfo\\ Project\\ for\\ Mac",
+					"$(PROJECT_DIR)/MediaInfo\\ Project\\ for\\ Mac",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "icefires.MediaInfo-Project-for-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -366,28 +530,124 @@
 			};
 			name = Release;
 		};
+		E991BA7421E9D1F7003A63E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "MediaInfo Project for MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "icefires.MediaInfo-Project-for-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediaInfo Project for Mac.app/Contents/MacOS/MediaInfo Project for Mac";
+			};
+			name = Debug;
+		};
+		E991BA7521E9D1F7003A63E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "MediaInfo Project for MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "icefires.MediaInfo-Project-for-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediaInfo Project for Mac.app/Contents/MacOS/MediaInfo Project for Mac";
+			};
+			name = Release;
+		};
+		E991BA7721E9D1F7003A63E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "MediaInfo Project for MacUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "icefires.MediaInfo-Project-for-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "MediaInfo Project for Mac";
+			};
+			name = Debug;
+		};
+		E991BA7821E9D1F7003A63E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "MediaInfo Project for MacUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "icefires.MediaInfo-Project-for-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "MediaInfo Project for Mac";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E96833F221E32302002FD5DB /* Build configuration list for PBXProject "MediaInfo Project for Mac" */ = {
+		E991BA4521E9D1F6003A63E6 /* Build configuration list for PBXProject "MediaInfo Project for Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E968340521E32304002FD5DB /* Debug */,
-				E968340621E32304002FD5DB /* Release */,
+				E991BA6E21E9D1F7003A63E6 /* Debug */,
+				E991BA6F21E9D1F7003A63E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E968340721E32304002FD5DB /* Build configuration list for PBXNativeTarget "MediaInfo Project for Mac" */ = {
+		E991BA7021E9D1F7003A63E6 /* Build configuration list for PBXNativeTarget "MediaInfo Project for Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E968340821E32304002FD5DB /* Debug */,
-				E968340921E32304002FD5DB /* Release */,
+				E991BA7121E9D1F7003A63E6 /* Debug */,
+				E991BA7221E9D1F7003A63E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E991BA7321E9D1F7003A63E6 /* Build configuration list for PBXNativeTarget "MediaInfo Project for MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E991BA7421E9D1F7003A63E6 /* Debug */,
+				E991BA7521E9D1F7003A63E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E991BA7621E9D1F7003A63E6 /* Build configuration list for PBXNativeTarget "MediaInfo Project for MacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E991BA7721E9D1F7003A63E6 /* Debug */,
+				E991BA7821E9D1F7003A63E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E96833EF21E32302002FD5DB /* Project object */;
+	rootObject = E991BA4221E9D1F6003A63E6 /* Project object */;
 }

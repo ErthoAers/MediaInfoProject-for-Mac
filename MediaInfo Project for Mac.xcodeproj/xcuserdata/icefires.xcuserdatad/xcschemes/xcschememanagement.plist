@@ -9,6 +9,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>MediaInfo Project for MacTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>E991BA4921E9D1F6003A63E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E991BA5B21E9D1F7003A63E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E991BA6621E9D1F7003A63E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

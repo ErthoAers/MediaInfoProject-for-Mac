@@ -110,11 +110,15 @@ final public class MediaInfo {
                     bitDepth:   Int(MediaInfo.MI.get(Audio, i, "BitDepth")) ?? 0,
                     duration:   Int(Double(MediaInfo.MI.get(Audio, i, "Duration")) ?? 0),
                     language:   MediaInfo.MI.get(Audio, i, "Language/String3").uppercased(),
-                    delay:      (MediaInfo.MI.get(Video, 0, "Delay") == "" || MediaInfo.MI.get(Video, 0, "Delay") == "0") ? false : true))
+                    delay:      (MediaInfo.MI.get(Audio, 0, "Delay") == "" || MediaInfo.MI.get(Audio, 0, "Delay") == "0") ? false : true))
         }
         
         let chapterBlock = { (i: Int) -> [Substring] in
-            if self.GeneralInfos.format == "Matroska" { return ((MediaInfo.MI.get(Menu, 0, i, InfoText)!.split(separator: ":"))) }
+            if self.GeneralInfos.format == "Matroska" {
+                let chapterList = MediaInfo.MI.get(Menu, 0, i, InfoText)!.split(separator: ":")
+                if chapterList.count == 1 { return ["", chapterList[0]] }
+                return chapterList
+            }
             else { return ["", Substring(MediaInfo.MI.get(Menu, 0, i, InfoText))] }
         }
         let dateFormatter = DateFormatter()

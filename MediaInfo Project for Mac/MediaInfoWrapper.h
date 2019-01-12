@@ -10,7 +10,7 @@
 #define MediaInfoWrapper_h
 
 #import <Foundation/Foundation.h>
-#import <MediaInfoDLL/MediaInfoDLL_Static.h>
+#import "MediaInfoDLL/MediaInfoDLL_Static.h"
 
 @interface MediaInfoWrapper : NSObject
 
