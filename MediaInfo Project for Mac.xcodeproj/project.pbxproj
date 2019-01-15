@@ -114,6 +114,8 @@
 		E93E6F6521E9D78000F3CDCB /* MediaInfoDLL */ = {
 			isa = PBXGroup;
 			children = (
+				E93E6F5321E9D41800F3CDCB /* MediaInfoWrapper.h */,
+				E93E6F5421E9D41800F3CDCB /* MediaInfoWrapper.mm */,
 				E93E6F6621E9D7AA00F3CDCB /* MediaInfoDLL_Static.h */,
 			);
 			path = MediaInfoDLL;
@@ -150,8 +152,6 @@
 				E93E6F4921E9D40E00F3CDCB /* ColorConverter.swift */,
 				E93E6F4B21E9D40E00F3CDCB /* FileLoader.swift */,
 				E93E6F4821E9D40E00F3CDCB /* MediaInfo.swift */,
-				E93E6F5321E9D41800F3CDCB /* MediaInfoWrapper.h */,
-				E93E6F5421E9D41800F3CDCB /* MediaInfoWrapper.mm */,
 				E93E6F4421E9D40D00F3CDCB /* MediaInfo Project for Mac-Bridging-Header.h */,
 				E991BA5121E9D1F7003A63E6 /* Assets.xcassets */,
 				E991BA5621E9D1F7003A63E6 /* Info.plist */,

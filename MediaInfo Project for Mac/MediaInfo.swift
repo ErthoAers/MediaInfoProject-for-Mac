@@ -114,12 +114,7 @@ final public class MediaInfo {
         }
         
         let chapterBlock = { (i: Int) -> [Substring] in
-            if self.GeneralInfos.format == "Matroska" {
-                let chapterList = MediaInfo.MI.get(Menu, 0, i, InfoText)!.split(separator: ":")
-                if chapterList.count == 1 { return ["", chapterList[0]] }
-                return chapterList
-            }
-            else { return ["", Substring(MediaInfo.MI.get(Menu, 0, i, InfoText))] }
+            return self.GeneralInfos.format == "Matroska" ? MediaInfo.MI.get(Menu, 0, i, InfoText)!.split(separator: ":", maxSplits: Int.max, omittingEmptySubsequences: false) : ["", Substring(MediaInfo.MI.get(Menu, 0, i, InfoText))]
         }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm:ss.SSS"
