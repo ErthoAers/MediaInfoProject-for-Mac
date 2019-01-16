@@ -69,6 +69,6 @@ public final class ColorConverter {
         if media.GeneralInfos.textCount > 0 {
             return #colorLiteral(red: 0.1522964537, green: 0.06655495614, blue: 1, alpha: 1)
         }
-        return #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
+        return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
 }
